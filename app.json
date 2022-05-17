@@ -1,0 +1,7 @@
+{
+  "name": "All Gas No Brakes",
+  "description": "Final project application.",
+  "repository": "https://github.com/haldud/all-gas-no-brakes",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["node", "express", "static"]
+}
