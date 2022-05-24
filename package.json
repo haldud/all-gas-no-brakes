@@ -2,7 +2,7 @@
   "name": "all-gas-no-brakes",
   "version": "1.0.0",
   "description": "Final Project",
-  "private": true,
+  "main": "app.js",
   "scripts": {
     "start": "node ./bin/www"
   },
