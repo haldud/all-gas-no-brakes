@@ -44,24 +44,33 @@ function predictAnyInjury(modelInput) {
   console.log("predicting any injury...");
   var anyInjuryResult = anyInjuryModel.predict(modelInput);
   console.log("any injury prediction:", anyInjuryResult);
-  console.log("any injury prediction data:", anyInjuryResult.dataSync());
-  // TODO: update HTML accordingly with any prediction results
+  var data = anyInjuryResult.dataSync();
+  console.log("any injury prediction data:", data);
+  setPredictionPercentage(data, 'any-injury-prediction', 'Any injury')
 }
 
 function predictSeriousInjury(modelInput) {
   console.log("predicting serious injury...");
   var seriousInjuryResult = seriousInjuryModel.predict(modelInput);
   console.log("serious injury prediction:", seriousInjuryResult);
-  console.log("serious injury prediction data:", seriousInjuryResult.dataSync());
-  // TODO: update HTML accordingly with serious prediction results
+  var data = seriousInjuryResult.dataSync();
+  console.log("serious injury prediction data:", data);
+  setPredictionPercentage(data, 'serious-injury-prediction', 'Serious injury')
 }
 
 function predictFatalInjury(modelInput) {
   console.log("predicting fatal injury...");
   var fatalInjuryResult = fatalInjuryModel.predict(modelInput);
   console.log("fatal injury prediction:", fatalInjuryResult);
-  console.log("fatal injury prediction data:", fatalInjuryResult.dataSync());
-  // TODO: update HTML accordingly with fatal prediction results
+  var data = fatalInjuryResult.dataSync();
+  console.log("fatal injury prediction data:", data);
+  setPredictionPercentage(data, 'fatal-injury-prediction', 'Fatal injury')
+}
+
+function setPredictionPercentage(data, elementId, label) {
+  var percentage = data[0];
+  var element = document.getElementById(elementId);
+  element.innerHTML = '<b>' + label + ':</b> ' + Number(percentage).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
 }
 
 function getModelInputBasedOnProvidedFields() {
