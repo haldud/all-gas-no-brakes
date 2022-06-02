@@ -223,9 +223,125 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Environment</h6>
                                 </div>
                                 <div class="card-body">
+                                                                        <div class="input-group">
+                                        <drop
+                                        <label for="age_im">Age</label>
+                                        <select id="age_im" class="form-control bg-light border-0 small">
+                                            <option value="15">15</option>
+                                            <option value="16">16</option>
+                                            <option value="17">17</option>
+                                            <option value="18">18</option>
+                                            <option value="19">19</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="age_im" aria-describedby="basic-addon2">
+                                    </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="ligh-conditions">Light Conditions</label>
+                                        <label for="mod_year">Vehicle Model Year</label>
+                                        <select id="mod_year" class="form-control bg-light border-0 small">
+                                            <option value="older than 2000">Older than 2000</option>
+                                            <option value="2001">2001</option>
+                                            <option value="2002">2002</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="mod_year" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="hour">Hour of Trip</label>
+                                        <select id="hour" class="form-control bg-light border-0 small">
+                                            <option value="12AM">12AM</option>
+                                            <option value="1AM">1AM</option>
+                                            <option value="2AM">2AM</option>
+                                            <option value="3AM">3AM</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="hour" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="vspd_lim">Speed Limit</label>
+                                        <select id="vspd_lim" class="form-control bg-light border-0 small">
+                                            <option value="0-25">0 - 25 MPH</option>
+                                            <option value="26-35">26 - 35 MPH</option>
+                                            <option value="36 - 45">36 - 45 MPH</option>
+                                            <option value="46 - 55">46 - 55 MPH</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="vspd_lim" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="trav_speed">Vehicle Speed</label>
+                                        <select id="trav_speed" class="form-control bg-light border-0 small">
+                                            <option value="0-25">0 - 25 MPH</option>
+                                            <option value="26-35">26 - 35 MPH</option>
+                                            <option value="36-45">36 - 45 MPH</option>
+                                            <option value="46-55">46 - 55 MPH</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="trav_speed" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="numoccs">Number of Occupants in Vehicle</label>
+                                        <select id="numoccs" class="form-control bg-light border-0 small">
+                                            <option value="1">1 (just the driver)</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="numoccs" aria-describedby="basic-addon2">
+                                    </div>
+                                    <!-- Need to review categories here -->
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="deformedname_Disabling Damage">Vehicle Recieves Disabling Damage</label>
+                                        <select id="deformedname_Disabling Damage" class="form-control bg-light border-0 small">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="deformedname_Disabling Damage" aria-describedby="basic-addon2">
+                                    </div>
+                                    <!-- Need to review categories here -->
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="rest_username_No_seatbelt">Wearing a Seatbelt?</label>
+                                        <select id="rest_username_No_seatbelt" class="form-control bg-light border-0 small">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="rest_username_No_seatbelt" aria-describedby="basic-addon2">
+                                    </div>
+                                    <!-- Need to review categories here ... is this sex of driver only? -->
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="sex_imname">Sex</label>
+                                        <select id="sex_imname" class="form-control bg-light border-0 small">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="sex_imname" aria-describedby="basic-addon2">
+                                    </div>
+                                    <!-- Need to review categories here ... is this sex of driver only? -->
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="urbancity">Driving in Urban or City Setting</label>
+                                        <select id="urbancity" class="form-control bg-light border-0 small">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="urbancity" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="light-conditions">Light Conditions</label>
                                         <select id="light-conditions" class="form-control bg-light border-0 small">
                                             <option value="daylight">Daylight</option>
                                             <option value="dark">Dark</option>
@@ -236,7 +352,6 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="Lighting conditions" aria-describedby="basic-addon2">
                                     </div>
-                                    
                                 </div>
                             </div>
 
