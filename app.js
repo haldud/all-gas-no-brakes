@@ -8,6 +8,7 @@ require('dotenv').config();
 
 var indexRouter = require('./routes/index');
 var cssrRouter = require('./routes/cssr');
+var predictorRouter = require('./routes/predictor');
 
 var app = express();
 
@@ -23,6 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/cssr', cssrRouter);
+app.use('/predictor', predictorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
