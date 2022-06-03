@@ -17,10 +17,36 @@ router.get('/numberOfAccidents', function(req, res, next) {
   })
 });
 
+/* GET number of vehicles. */
+router.get('/numberOfVehicles', function(req, res, next) {
+  db.one('SELECT COUNT(*) AS "number_of_vehicles" FROM public.vehicle')
+  .then((data) => {
+    console.log('DATA:', data)
+    res.json(data);
+  })
+  .catch((error) => {
+    console.log('ERROR:', error)
+    res.status(500);
+  })
+});
+
+/* GET number of people. */
+router.get('/numberOfPeople', function(req, res, next) {
+  db.one('SELECT COUNT(*) AS "number_of_people" FROM public.person')
+  .then((data) => {
+    console.log('DATA:', data)
+    res.json(data);
+  })
+  .catch((error) => {
+    console.log('ERROR:', error)
+    res.status(500);
+  })
+});
+
 /* GET number of any injuries. */
 router.get('/numberOfInjuries', function(req, res, next) {
   db.one(`
-    SELECT COUNT(*) AS "number_of_injuries"
+    SELECT COUNT(*) AS "number_of_injuries", (CAST(COUNT(*) AS NUMERIC) / (SELECT COUNT(*) FROM public.person) * 100) AS "percent"
     FROM public.person per
     WHERE per.injsev_imname = 'Suspected Serious Injury (A)'
     OR per.injsev_imname = 'Possible Injury (C)'
@@ -41,7 +67,7 @@ router.get('/numberOfInjuries', function(req, res, next) {
 /* GET number of serious injuries. */
 router.get('/numberOfSeriousInjuries', function(req, res, next) {
   db.one(`
-    SELECT COUNT(*) AS "number_of_serious_injuries"
+    SELECT COUNT(*) AS "number_of_serious_injuries", (CAST(COUNT(*) AS NUMERIC) / (SELECT COUNT(*) FROM public.person) * 100) AS "percent"
     FROM public.person per
     WHERE per.injsev_imname = 'Suspected Serious Injury (A)';`)
   .then((data) => {
@@ -57,7 +83,7 @@ router.get('/numberOfSeriousInjuries', function(req, res, next) {
 /* GET number of fatalities. */
 router.get('/numberOfFatalities', function(req, res, next) {
   db.one(`
-    SELECT COUNT(*) AS "number_of_fatalities"
+    SELECT COUNT(*) AS "number_of_fatalities", (CAST(COUNT(*) AS NUMERIC) / (SELECT COUNT(*) FROM public.person) * 100) AS "percent"
     FROM public.person per
     WHERE per.injsev_imname = 'Fatal Injury (K)'
     OR per.injsev_imname = 'Died Prior to Crash*';`)
