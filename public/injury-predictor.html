@@ -215,7 +215,7 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <div class="col-xl-8 col-lg-7">
+                        <div class="col-xl-10 col-lg-7">
 
                             <!-- Environment -->
                             <div class="card shadow mb-4">
@@ -570,30 +570,54 @@
 
                         </div>
 
-                        <!-- Prediction -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Prediction</h6>
+                        <!-- Predictions -->
+                        <div class="col-xl-2 col-lg-5">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of any injury</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div>
+                                                <canvas id="any-injury-prediction" width="140" height="140">
+                                                </canvas>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                    <hr>
-                                    Styling for the donut chart can be found in the
-                                    <code>/js/demo/chart-pie-demo.js</code> file.
-                                    <hr>
-                                    <div id="any-injury-prediction">
 
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of serious injury</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div>
+                                                <canvas id="serious-injury-prediction" width="140" height="140">
+                                                </canvas>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div id="serious-injury-prediction">
-                                        
-                                    </div>
-                                    <div id="fatal-injury-prediction">
-                                        
+                                </div>
+
+                                <div class="col-xl-12 col-lg-12">
+                                    <div class="card shadow mb-4">
+                                        <!-- Card Header - Dropdown -->
+                                        <div class="card-header py-3">
+                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of fatal injury</h6>
+                                        </div>
+                                        <!-- Card Body -->
+                                        <div class="card-body">
+                                            <div>
+                                                <canvas id="fatal-injury-prediction" width="140" height="140">
+                                                </canvas>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
