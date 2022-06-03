@@ -111,7 +111,7 @@
                     <!-- Content Row -->
                     <div class="row">
 
-                        <div class="col-xl-4 col-lg-7">
+                        <div class="col-xl-3 col-lg-7">
 
                             <!-- Environment 1 MOST IMPORTANT FEATURES -->
                             <div class="card shadow mb-4">
@@ -523,96 +523,76 @@
                                         <drop
                                         <label for="bdytyp"><b>Vehicle body type</b></label>
                                         <select id="bdytyp" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-
+                                            <option value="two_door">2-door sedan</option>
+                                            <option value="four_door">4-door sedan</option>
+                                            <option value="convertable">Convertable</option>
+                                            <option value="small_suv_truck">Small SUV/truck</option>
+                                            <option value="large_suv">Large SUV</option>
+                                            <option value="van">Van</option>
+                                            <option value="truck">Truck</option>
+                                            <option value="motorcycle_trike">Motorcycle/trike</option>
+                                            <option value="bus">Bus</option>
+                                            <option value="work_equip">Construction/farm equipment</option>
+                                            <option value="motorhome">Motorhome/RV</option>
+                                            <option value="atv_rec">ATV/rec vehicle</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="bdytyp" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
-                                        <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
+                                        <label for="weather"><b>Weather conditions</b></label>
+                                        <select id="weather" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="clear">Clear</option>
+                                            <option value="cloudy">Cloudy</option>
+                                            <option value="rain_sleet">Rain / selected</option>
+                                            <option value="snow_blowsnow">Snow / blowing snow</option>
+                                            <option value="fog_smoke">Fog / smoke</option>
+                                            <option value="blowing_dirt">Blowing dirt</option>
+                                            <option value="windy">Windy</option>
+                                            <option value="freezing_rain">Freezing rain</option>
+                                            <option value="other">Other</option>
                                             <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH</option>
-                                            <option value="85">85 MPH</option>
-                                            <option value="90">90 MPH</option>
-                                            <option value="95">95 MPH</option>
-                                            <option value="100">100 MPH</option>
-                                            <option value="105">105 MPH</option>
-                                            <option value="110">110 MPH</option>
-                                            <option value="115">115 MPH</option>
-                                            <option value="120">120 MPH</option>
-                                            <option value="125">125 MPH</option>
-                                            <option value="130">130 MPH</option>
-                                            <option value="135">135 MPH</option>
-                                            <option value="140">140 MPH</option>
-                                            <option value="145">145 MPH</option>
-                                            <option value="150">150 MPH</option>
-                                            <option value="155">Faster than 150 MPH</option>                                            
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="trav_speed" aria-describedby="basic-addon2">
+                                aria-label="weather" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
-                                        <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1">1 (just the driver)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">More than 15</option>
+                                        <label for="most_harm"><b>Most harmful event</b></label>
+                                        <select id="most_harm" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="animal_ped">Animal / pedestrian</option>
+                                            <option value="barrier">Barrier</option>
+                                            <option value="fire">Fire</option>
+                                            <option value="fallout_inj">Falling out / medical cause</option>
+                                            <option value="lost_control">Loss of control</option>
+                                            <option value="moving_veh">Moving vehicle</option>
+                                            <option value="parked_veh">Parked vehicle</option>
+                                            <option value="fixed_obj">Fixed manmade object</option>
+                                            <option value="nat_obj">Fixed natural object</option>
+                                            <option value="terrain">Terrain</option>
+                                            <option value="train">Train</option>
+                                            <option value="water">Water</option>
+                                            <option value="object">Object hits vehicle</option>
+                                            <option value="unknown">Unknown</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="numoccs" aria-describedby="basic-addon2">
+                                aria-label="most_harm" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
-                                        <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No damage</option>
-                                            <option value="1">Minor damage</option>
-                                            <option value="2">Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
+                                        <label for="day_week"><b>Day of the week</b></label>
+                                        <select id="day_week" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="Sun">Sunday</option>
+                                            <option value="Mon">Monday</option>
+                                            <option value="Tues">Tuesday</option>
+                                            <option value="Wed">Wednesday</option>
+                                            <option value="Thurs">Thursday</option>
+                                            <option value="Fri">Friday</option>
+                                            <option value="Sat">Saturday</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
+                                aria-label="day_week" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
