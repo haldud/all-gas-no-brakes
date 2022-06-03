@@ -76,19 +76,19 @@ function setPredictionPercentage(data, elementId, label) {
 function getModelInputBasedOnProvidedFields() {
   // Get all of the elements that represent input.
   var lightConditions = document.getElementById("light-conditions");
-
+  var urbanCity = document.getElementById("urban-city");
   // Log provided values.
   console.log("light conditions:", lightConditions.value);
-
+  console.log("urban-city:",urbanCity.value);
   // Pass provided values to get model input.
   var modelInput = getModelInput(lightConditions.value);
-
   return modelInput;
 }
 
 function getModelInput(lightConditions) {
   let vectorInput = [[
-      0, //urbancity
+    (urbanCity == '0') ? 1 : 0, //urbancity_0_no
+    (urbanCity == '1') ? 1 : 0, //urbancity_1_yes
       0, //hour
       0, //alcohol
       0, //wrk_zone
