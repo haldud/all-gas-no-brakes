@@ -124,7 +124,10 @@ function getModelInputBasedOnProvidedFields(modelType) {
   var restraintUsed = document.getElementById("rest_usename_No_seatbelt");
   var driverSex = document.getElementById("sex_imname");
   var urbanCity = document.getElementById("urban-city");
-  var lightConditions = document.getElementById("light-conditions"); 
+  var lightConditions = document.getElementById("light-conditions");
+  var vehicleCountry = document.getElementById("make_country");
+  var drivingLocation = document.getElementById("vtrafwayname");
+  var seatPosition = document.getElementById("seat_name"); 
   // Log provided values.
   console.log("age:", driverAge.value);
   console.log("vehicle year:", vehicleYear.value);
@@ -137,12 +140,15 @@ function getModelInputBasedOnProvidedFields(modelType) {
   console.log("driver sex:", driverSex.value);
   console.log("urban-city:",urbanCity.value);
   console.log("light conditions:", lightConditions.value);
+  console.log("vehicle country:", vehicleCountry.value);
+  console.log("driving location:", drivingLocation.value);
+  console.log("seat location:", seatPosition.value);
   // Pass provided values to get model input.
-  var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value);
+  var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value,vehicleCountry.value,drivingLocation.value,seatPosition.value);
   return modelInput;
 }
 
-function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,) {
+function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,vehicleCountry,drivingLocation,seatPosition) {
   var scaledInput;
   let input = [
     parseInt(urbanCity), //urbancity
@@ -214,13 +220,13 @@ function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehi
     (vehicleDamage == '2') ? 1 : 0, //deformedname_Functional Damage
     (vehicleDamage == '1') ? 1 : 0, //deformedname_Minor Damage
     (vehicleDamage == '0') ? 1 : 0, //deformedname_No Damage
-    0, //vtrafwayname_Exit_on_ramp
-    0, //vtrafwayname_One-way
-    0, //vtrafwayname_Parking_lot_driveway
-    0, //vtrafwayname_Two-way
-    0, //vtrafwayname_Two_way
-    0, //vtrafwayname_Two_way_div_med_bar
-    1, //vtrafwayname_Two_way_div_med_nobar	
+    (drivingLocation== 'on_ramp') ? 1 : 0, //vtrafwayname_Exit_on_ramp
+    (drivingLocation== 'one_way') ? 1 : 0, //vtrafwayname_One-way
+    (drivingLocation== 'park_drive') ? 1 : 0, //vtrafwayname_Parking_lot_driveway
+    (drivingLocation== 'two-way') ? 1 : 0, //vtrafwayname_Two-way
+    (drivingLocation== 'two_way') ? 1 : 0, //vtrafwayname_Two_way
+    (drivingLocation== 'two_way_div_bar') ? 1 : 0, //vtrafwayname_Two_way_div_med_bar
+    (drivingLocation== 'two_way_div_nobar') ? 1 : 0, //vtrafwayname_Two_way_div_med_nobar	
     0, //bdytyp_imname_2_door_sedan
     1, //bdytyp_imname_4_door_sedan
     0, //bdytyp_imname_ATV_rec_vehicle	
@@ -249,24 +255,24 @@ function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehi
     (restraintUsed == 'Harness') ? 1 : 0 , //rest_usename_Harness
     (restraintUsed == 'No_seatbelt') ? 1 : 0 , //rest_usename_No_seatbelt
     (restraintUsed == 'Seatbelt') ? 1 : 0 , //rest_usename_Seatbelt
-    0, //seat_imname_Cargo_area
-    1, //seat_imname_Driver
-    0, //seat_imname_Front_passenger
-    0, //seat_imname_Riding_outside
-    0, //seat_imname_Second_row
-    0, //seat_imname_Third_or_4 Row
-    0, //seat_imname_Trailer
-    0, //make_country_make_China
-    0, //make_country_make_England
-    0, //make_country_make_Germany
-    0, //make_country_make_Italy
-    0, //make_country_make_Japan
-    0, //make_country_make_Korea
-    0, //make_country_make_Sweden
-    1, //make_country_make_US
-    0, //make_country_make_US_truck
-    0, //make_country_make_motorcycle
-    0  //make_country_make_other
+    (seatPosition == 'cargo') ? 1 : 0 , //seat_imname_Cargo_area
+    (seatPosition == 'driver') ? 1 : 0 , //seat_imname_Driver
+    (seatPosition == 'front_pass') ? 1 : 0 , //seat_imname_Front_passenger
+    (seatPosition == 'outside') ? 1 : 0 , //seat_imname_Riding_outside
+    (seatPosition == 'second') ? 1 : 0 , //seat_imname_Second_row
+    (seatPosition == 'third_fourth') ? 1 : 0 , //seat_imname_Third_or_4 Row
+    (seatPosition == 'trailer') ? 1 : 0 , //seat_imname_Trailer
+    (vehicleCountry == 'China') ? 1 : 0 , //make_country_make_China
+    (vehicleCountry == 'England') ? 1 : 0 , //make_country_make_England
+    (vehicleCountry == 'Germany') ? 1 : 0 , //make_country_make_Germany
+    (vehicleCountry == 'Italy') ? 1 : 0 , //make_country_make_Italy
+    (vehicleCountry == 'Japan') ? 1 : 0 , //make_country_make_Japan
+    (vehicleCountry == 'Korea') ? 1 : 0 , //make_country_make_Korea
+    (vehicleCountry == 'Sweden') ? 1 : 0 , //make_country_make_Sweden
+    (vehicleCountry == 'USA') ? 1 : 0 , //make_country_make_US
+    (vehicleCountry == 'Truck') ? 1 : 0 , //make_country_make_US_truck
+    (vehicleCountry == 'Motorcycle') ? 1 : 0 , //make_country_make_motorcycle
+    (vehicleCountry == 'Other') ? 1 : 0 , //make_country_make_other
   ];
 
   console.log('input prior to scaling:', input);
