@@ -75,36 +75,53 @@ function setPredictionPercentage(data, elementId, label) {
 
 function getModelInputBasedOnProvidedFields() {
   // Get all of the elements that represent input.
-  var lightConditions = document.getElementById("light-conditions");
+  var driverAge = document.getElementById("age_im");
+  var vehicleYear = document.getElementById("mod_year");
+  var tripHour = document.getElementById("hour");
+  var speedLimit = document.getElementById("vspd_lim");
+  var vehicleSpeed = document.getElementById("trav_speed");
+  var vehicleOccupants = document.getElementById("numoccs");
+  var vehicleDamage = document.getElementById("deformedname_Disabling_Damage");
+  var restraintUsed = document.getElementById("rest_usename_No_seatbelt");
+  var driverSex = document.getElementById("sex_imname");
   var urbanCity = document.getElementById("urban-city");
+  var lightConditions = document.getElementById("light-conditions"); 
   // Log provided values.
-  console.log("light conditions:", lightConditions.value);
+  console.log("age:", driverAge.value);
+  console.log("vehicle year:", vehicleYear.value);
+  console.log("hour of day:", tripHour.value);
+  console.log("speed limit:", speedLimit.value);
+  console.log("vehicle speed:", vehicleSpeed.value);
+  console.log("vehicle occupants:", vehicleOccupants.value);
+  console.log("vehicle damage:", vehicleDamage.value);
+  console.log("restraint used:", restraintUsed.value);
+  console.log("driver sex:", driverSex.value);
   console.log("urban-city:",urbanCity.value);
+  console.log("light conditions:", lightConditions.value);
   // Pass provided values to get model input.
-  var modelInput = getModelInput(lightConditions.value);
+  var modelInput = getModelInput(driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value);
   return modelInput;
 }
 
-function getModelInput(lightConditions) {
+function getModelInput(driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,) {
   let vectorInput = [[
-    (urbanCity == '0') ? 1 : 0, //urbancity_0_no
-    (urbanCity == '1') ? 1 : 0, //urbancity_1_yes
-      0, //hour
+      0, //urbancity (NEEED TO FIGURE OUT WHY THIS BREAKING!)
+      tripHour, //hour
       0, //alcohol
       0, //wrk_zone
-      0, //numoccs
+      vehicleOccupants, //numoccs
       0, //tow_vehname
-      0, //trav_speed
+      vehicleSpeed, //trav_speed
       0, //speedrelname
-      0, //vspd_lim
-      0, //mod_year
+      speedLimit, //vspd_lim
+      vehicleYear, //mod_year
       0, //rest_misname
       0, //helm_usename
       0, //helm_misname
       0, //drinkingname
       0, //drugsname
-      0, //sex_imname
-      0, //age_im
+      driverSex, //sex_imname
+      driverAge, //age_im
       0, //alc_resname_08
       0, //month_Apr
       0, //month_Aug
@@ -153,10 +170,10 @@ function getModelInput(lightConditions) {
       0, //m_harmname_harm_train
       0, //m_harmname_harm_unknown
       0, //m_harmname_harm_water
-      0, //deformedname_Disabling Damage
-      0, //deformedname_Functional Damage
-      0, //deformedname_Minor Damage
-      0, //deformedname_No Damage
+      (vehicleDamage == '3') ? 1 : 0, //deformedname_Disabling Damage
+      (vehicleDamage == '2') ? 1 : 0, //deformedname_Functional Damage
+      (vehicleDamage == '1') ? 1 : 0, //deformedname_Minor Damage
+      (vehicleDamage == '0') ? 1 : 0, //deformedname_No Damage
       0, //vtrafwayname_Exit_on_ramp
       0, //vtrafwayname_One-way
       0, //vtrafwayname_Parking_lot_driveway
@@ -188,10 +205,10 @@ function getModelInput(lightConditions) {
       0, //p_crash1name_Successful Avoidance Maneuver to a Previous Critical Event
       0, //p_crash1name_Turning Left
       0, //p_crash1name_Turning Right
-      0, //rest_usename_Child_restraint
-      0, //rest_usename_Harness
-      0, //rest_usename_No_seatbelt
-      0, //rest_usename_Seatbelt
+      (restraintUsed == 'Child_restraint') ? 1 : 0 , //rest_usename_Child_restraint
+      (restraintUsed == 'Harness') ? 1 : 0 , //rest_usename_Harness
+      (restraintUsed == 'No_seatbelt') ? 1 : 0 , //rest_usename_No_seatbelt
+      (restraintUsed == 'Seatbelt') ? 1 : 0 , //rest_usename_Seatbelt
       0, //seat_imname_Cargo_area
       0, //seat_imname_Driver
       0, //seat_imname_Front_passenger

@@ -225,8 +225,8 @@
                                 <div class="card-body">
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im">Age</label>
-                                        <select id="age_im" class="form-control bg-light border-0 small">
+                                        <label for="age_im"><b>Driver Age</b></label>
+                                        <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">infant</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -335,8 +335,8 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="mod_year">Vehicle Model Year</label>
-                                        <select id="mod_year" class="form-control bg-light border-0 small">
+                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
+                                        <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1960">Older than 1980</option>
                                             <option value="1980">1980</option>                                            
                                             <option value="1981">1981</option>                                            
@@ -385,13 +385,13 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="hour">Hour of Trip</label>
-                                        <select id="hour" class="form-control bg-light border-0 small">
+                                        <label for="hour"><b>Hour of Trip</b></label>
+                                        <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">12AM</option>
                                             <option value="1">1AM</option>
                                             <option value="2">2AM</option>
                                             <option value="3">3AM</option>
-                                            <option value="4">4M</option>
+                                            <option value="4">4AM</option>
                                             <option value="5">5AM</option>
                                             <option value="6">6AM</option>
                                             <option value="7">7AM</option>
@@ -417,8 +417,8 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="vspd_lim">Speed Limit</label>
-                                        <select id="vspd_lim" class="form-control bg-light border-0 small">
+                                        <label for="vspd_lim"><b>Speed Limit</b></label>
+                                        <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
                                             <option value="10">10 MPH</option>
@@ -442,8 +442,8 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="trav_speed">Vehicle Speed</label>
-                                        <select id="trav_speed" class="form-control bg-light border-0 small">
+                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
+                                        <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
                                             <option value="10">10 MPH</option>
@@ -482,8 +482,8 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="numoccs">Number of Occupants in Vehicle</label>
-                                        <select id="numoccs" class="form-control bg-light border-0 small">
+                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
+                                        <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1">1 (just the driver)</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
@@ -504,50 +504,46 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="numoccs" aria-describedby="basic-addon2">
                                     </div>
-                                    <!-- Need to review categories here -->
                                     <div class="input-group">
                                         <drop
-                                        <label for="deformedname_Disabling Damage">Vehicle Damage</label>
-                                        <select id="deformedname_Disabling Damage" class="form-control bg-light border-0 small">
+                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
+                                        <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">No damage</option>
                                             <option value="1">Minor damage</option>
                                             <option value="2">Significant damage</option>
                                             <option value="3">Disabled/major damage</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="deformedname_Disabling Damage" aria-describedby="basic-addon2">
+                                aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
                                     </div>
-                                    <!-- Need to review categories here -->
                                     <div class="input-group">
                                         <drop
-                                        <label for="rest_username_No_seatbelt">Type of restraint</label>
-                                        <select id="rest_username_No_seatbelt" class="form-control bg-light border-0 small">
-                                            <option value="none">None</option>
-                                            <option value="seatbelt">Seatbelt</option>
-                                            <option value="child">Child seat / booster</option>
-                                            <option value="harness">Multipoint harness</option>
+                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
+                                        <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="No_seatbelt">None</option>
+                                            <option value="Seatbelt">Seatbelt</option>
+                                            <option value="Child_restraint">Child seat / booster</option>
+                                            <option value="Harness">Multipoint harness</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="rest_username_No_seatbelt" aria-describedby="basic-addon2">
+                                aria-label="rest_usename_No_seatbelt" aria-describedby="basic-addon2">
                                     </div>
-                                    <!-- Need to review categories here ... is this sex of driver only? -->
                                     <div class="input-group">
                                         <drop
-                                        <label for="sex_imname">Sex</label>
-                                        <select id="sex_imname" class="form-control bg-light border-0 small">
-                                            <option value="0">Male</option>
-                                            <option value="1">Female</option>
+                                        <label for="sex_imname"><b>Driver Sex</b></label>
+                                        <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">Female</option>
+                                            <option value="1">Male</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="sex_imname" aria-describedby="basic-addon2">
                                     </div>
-                                    <!-- Need to review categories here ... is this sex of driver only? -->
                                     <div class="input-group">
                                         <drop
-                                        <label for="urban-city">Driving in Urban or City Setting</label>
+                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
                                         <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
-                                            <option value="1">Yes</option>
+                                            <option value="0">Urban</option>
+                                            <option value="1">City</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="urban-city" aria-describedby="basic-addon2">
