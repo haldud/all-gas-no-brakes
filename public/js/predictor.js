@@ -141,7 +141,7 @@ function getModelInputBasedOnProvidedFields(modelType) {
   console.log("urban-city:",urbanCity.value);
   console.log("light conditions:", lightConditions.value);
   console.log("vehicle country:", vehicleCountry.value);
-  console.log("driving location:", drivingLocation,value);
+  console.log("driving location:", drivingLocation.value);
   console.log("seat location:", seatPosition.value);
   // Pass provided values to get model input.
   var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value,vehicleCountry.value,drivingLocation.value,seatPosition.value);
