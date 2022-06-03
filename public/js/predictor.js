@@ -46,8 +46,7 @@ function predictAnyInjury(modelInput) {
   console.log("any injury prediction:", anyInjuryResult);
   var data = anyInjuryResult.dataSync();
   console.log("any injury prediction data:", data);
-  setPredictionPercentage(data, 'any-injury-prediction', 'Any injury')
-  drawLikelihoodChart('any-injury-prediction', Math.round(data[0] * 100), 'Likelihood of any injury');
+  drawLikelihoodChart('any-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of any injury');
 }
 
 function predictSeriousInjury(modelInput) {
@@ -56,8 +55,7 @@ function predictSeriousInjury(modelInput) {
   console.log("serious injury prediction:", seriousInjuryResult);
   var data = seriousInjuryResult.dataSync();
   console.log("serious injury prediction data:", data);
-  setPredictionPercentage(data, 'serious-injury-prediction', 'Serious injury')
-  drawLikelihoodChart('serious-injury-prediction', Math.round(data[0] * 100), 'Likelihood of serious injury');
+  drawLikelihoodChart('serious-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of serious injury');
 }
 
 function predictFatalInjury(modelInput) {
@@ -66,14 +64,7 @@ function predictFatalInjury(modelInput) {
   console.log("fatal injury prediction:", fatalInjuryResult);
   var data = fatalInjuryResult.dataSync();
   console.log("fatal injury prediction data:", data);
-  setPredictionPercentage(data, 'fatal-injury-prediction', 'Fatal injury')
-  drawLikelihoodChart('fatal-injury-prediction', Math.round(data[0] * 100), 'Likelihood of fatal injury');
-}
-
-function setPredictionPercentage(data, elementId, label) {
-  var percentage = data[0];
-  var element = document.getElementById(elementId);
-  element.innerHTML = '<b>' + label + ':</b> ' + Number(percentage).toLocaleString(undefined,{style: 'percent', minimumFractionDigits:2});
+  drawLikelihoodChart('fatal-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of fatal injury');
 }
 
 function getModelInputBasedOnProvidedFields() {
@@ -108,7 +99,7 @@ function getModelInputBasedOnProvidedFields() {
 
 function getModelInput(driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,) {
   let vectorInput = [[
-      0, //urbancity (NEEED TO FIGURE OUT WHY THIS BREAKING!)
+      parseInt(urbanCity), //urbancity (NEEED TO FIGURE OUT WHY THIS BREAKING!)
       tripHour, //hour
       0, //alcohol
       0, //wrk_zone
