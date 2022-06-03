@@ -47,6 +47,7 @@ function predictAnyInjury(modelInput) {
   var data = anyInjuryResult.dataSync();
   console.log("any injury prediction data:", data);
   setPredictionPercentage(data, 'any-injury-prediction', 'Any injury')
+  drawLikelihoodChart('any-injury-prediction', Math.round(data[0] * 100), 'Likelihood of any injury');
 }
 
 function predictSeriousInjury(modelInput) {
@@ -56,6 +57,7 @@ function predictSeriousInjury(modelInput) {
   var data = seriousInjuryResult.dataSync();
   console.log("serious injury prediction data:", data);
   setPredictionPercentage(data, 'serious-injury-prediction', 'Serious injury')
+  drawLikelihoodChart('serious-injury-prediction', Math.round(data[0] * 100), 'Likelihood of serious injury');
 }
 
 function predictFatalInjury(modelInput) {
@@ -65,6 +67,7 @@ function predictFatalInjury(modelInput) {
   var data = fatalInjuryResult.dataSync();
   console.log("fatal injury prediction data:", data);
   setPredictionPercentage(data, 'fatal-injury-prediction', 'Fatal injury')
+  drawLikelihoodChart('fatal-injury-prediction', Math.round(data[0] * 100), 'Likelihood of fatal injury');
 }
 
 function setPredictionPercentage(data, elementId, label) {
@@ -232,6 +235,55 @@ function getModelInput(driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,ve
   console.log('vector input:', vectorInput);
 
   return tf.tensor(vectorInput);
+}
+
+function drawLikelihoodChart(id, percent, label) {
+  new Chart(id, {
+    type: 'doughnut',
+    data: {
+      datasets: [{
+        label: label,
+        percent: percent,
+        backgroundColor: ['#5283ff']
+      }]
+    },
+    plugins: [{
+        beforeInit: (chart) => {
+          const dataset = chart.data.datasets[0];
+          chart.data.labels = [dataset.label];
+          dataset.data = [dataset.percent, 100 - dataset.percent];
+        }
+      },
+      {
+        beforeDraw: (chart) => {
+          var width = chart.chart.width,
+            height = chart.chart.height,
+            ctx = chart.chart.ctx;
+          ctx.restore();
+          var fontSize = (height / 100).toFixed(2);
+          ctx.font = fontSize + "em sans-serif";
+          ctx.fillStyle = "#9b9b9b";
+          ctx.textBaseline = "middle";
+          var text = chart.data.datasets[0].percent + "%",
+            textX = Math.round((width - ctx.measureText(text).width) / 2),
+            textY = height / 2;
+          ctx.fillText(text, textX, textY);
+          ctx.save();
+        }
+      }
+    ],
+    options: {
+      maintainAspectRatio: false,
+      cutoutPercentage: 75,
+      rotation: Math.PI / 2,
+      legend: {
+        display: false,
+      },
+      tooltips: {
+        filter: tooltipItem => tooltipItem.index == 0
+      }
+    }
+  });
 }
 
 async function loadAnyInjuryModel() {
