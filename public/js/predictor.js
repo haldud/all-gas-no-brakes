@@ -125,9 +125,27 @@ function getModelInputBasedOnProvidedFields(modelType) {
   var driverSex = document.getElementById("sex_imname");
   var urbanCity = document.getElementById("urban-city");
   var lightConditions = document.getElementById("light-conditions");
+  var weatherConditions = document.getElementById("weather");
+  var bodyType = document.getElementById("bdytyp");
   var vehicleCountry = document.getElementById("make_country");
+  var towingTrailer = document.getElementById("towing");
   var drivingLocation = document.getElementById("vtrafwayname");
+  var workZone = document.getElementById("workzone");
+  var speedRelated = document.getElementById("speedrel");
+  var priorCrash = document.getElementById("p_crash");
+  var mostHarmful = document.getElementById("most_harm"); 
+  var accidentMonth = document.getElementById("month"); 
+  var accidentDay = document.getElementById("day_week"); 
   var seatPosition = document.getElementById("seat_name"); 
+  var restraintMisuse = document.getElementById("restraint_misuse"); 
+  var helmetUse = document.getElementById("helmet_use"); 
+  var helmetMisuse = document.getElementById("helmet_misuse");
+  var driverAlcohol = document.getElementById("driv_alcohol");
+  var drinkingNamed = document.getElementById("drinking_name");
+  var alcohol08 = document.getElementById("alc_08");
+  var drugsInvolved = document.getElementById("drugs");
+
+
   // Log provided values.
   console.log("age:", driverAge.value);
   console.log("vehicle year:", vehicleYear.value);
@@ -140,9 +158,26 @@ function getModelInputBasedOnProvidedFields(modelType) {
   console.log("driver sex:", driverSex.value);
   console.log("urban-city:",urbanCity.value);
   console.log("light conditions:", lightConditions.value);
+  console.log("weather conditions:", weatherConditions.value);
+  console.log("body type:", bodyType.value);
   console.log("vehicle country:", vehicleCountry.value);
+  console.log("towing trailer:", towingTrailer.value);
   console.log("driving location:", drivingLocation.value);
+  console.log("work zone:", workZone.value);
+  console.log("speed related:", speedRelated.value);
+  console.log("prior crash:", priorCrashvalue);
+  console.log("most harmful:", mostHarmful.value);
+  console.log("accident month:", accidentMonth.value);
+  console.log("accident day:", accidentDay.value);
   console.log("seat location:", seatPosition.value);
+  console.log("restraint misuse:", restraintMisuse.value);
+  console.log("helmet use:", helmetUse.value);
+  console.log("helmet misuse:", helmetMisuse.value);
+  console.log("driver alcohol:", driverAlcohol.value);
+  console.log("drinking named:", drinkingNamed.value);
+  console.log("alcohol 08:", alcohol08.value);
+  console.log("drugs involved:", drugsInvolved.value);
+ 
   // Pass provided values to get model input.
   var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value,vehicleCountry.value,drivingLocation.value,seatPosition.value);
   return modelInput;
