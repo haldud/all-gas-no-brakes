@@ -165,7 +165,7 @@ function getModelInputBasedOnProvidedFields(modelType) {
   console.log("driving location:", drivingLocation.value);
   console.log("work zone:", workZone.value);
   console.log("speed related:", speedRelated.value);
-  console.log("prior crash:", priorCrashvalue);
+  console.log("prior crash:", priorCrash.value);
   console.log("most harmful:", mostHarmful.value);
   console.log("accident month:", accidentMonth.value);
   console.log("accident day:", accidentDay.value);
