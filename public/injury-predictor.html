@@ -20,6 +20,11 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        .important{
+   color: red;
+}
+    </style>
 </head>
 
 <body id="page-top">
@@ -106,13 +111,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. We've selected some key options to consider but there are more than XX to customize. Once set, click the "Show me the results!" button and you'll see a prediction of various levels of injury given your customized conditions.</p>
+                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. The items in <b><span class= "important">red</span></b> may be the most important to consider but there are more items to the right to select as well. Once set, click the "Show me the results!" button and you'll see a prediction of various levels of injury given your customized conditions.</p>
 
                     <!-- Content Row -->
                     <div class="row">
 
                         <div class="col-xl-4 col-lg-7">
-
+                            
                             <!-- Environment 1 MOST IMPORTANT FEATURES -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
@@ -121,7 +126,7 @@
                                 <div class="card-body">
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im"><b>Driver Age</b></label>
+                                        <label for="age_im"><b><span class="important">Passenger Age</span></b></label>
                                         <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">infant</option>
                                             <option value="1">1</option>
@@ -231,7 +236,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
+                                        <label for="mod_year"><b><span class="important">Vehicle Model Year</span></b></label>
                                         <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1960">Older than 1980</option>
                                             <option value="1980">1980</option>                                            
@@ -281,7 +286,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="hour"><b>Hour of Trip</b></label>
+                                        <label for="hour"><b><span class="important">Hour of Trip</span></b></label>
                                         <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">12AM</option>
                                             <option value="1">1AM</option>
@@ -313,7 +318,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="vspd_lim"><b>Speed Limit</b></label>
+                                        <label for="vspd_lim"><b><span class="important">Speed Limit</span></b></label>
                                         <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
@@ -338,7 +343,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
+                                        <label for="trav_speed"><b><span class="important">Vehicle Speed</span></b></label>
                                         <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
@@ -378,7 +383,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
+                                        <label for="numoccs"><b><span class="important">Number of Occupants in Vehicle</span></b></label>
                                         <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1">1 (just the driver)</option>
                                             <option value="2">2</option>
@@ -402,7 +407,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
+                                        <label for="deformedname_Disabling_Damage"><b><span class="important">Vehicle Damage</span></b></label>
                                         <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">No damage</option>
                                             <option value="1">Minor damage</option>
@@ -414,7 +419,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
+                                        <label for="rest_usename_No_seatbelt"><b><span class="important">Type of Restraint</span></b></label>
                                         <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="No_seatbelt">None</option>
                                             <option value="Seatbelt">Seatbelt</option>
@@ -426,7 +431,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="sex_imname"><b>Driver Sex</b></label>
+                                        <label for="sex_imname"><b><span class="important">Driver's Sex</span></b></label>
                                         <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">Female</option>
                                             <option value="1">Male</option>
@@ -436,7 +441,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
+                                        <label for="urban-city"><b><span class="important">Driving in Urban or City Setting</span></b></label>
                                         <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">Urban</option>
                                             <option value="1">City</option>
@@ -444,26 +449,14 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="urban-city" aria-describedby="basic-addon2">
                                     </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="light-conditions">Light Conditions</label>
-                                        <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="daylight">Daylight</option>
-                                            <option value="dark">Dark</option>
-                                            <option value="dawn">Dawn</option>
-                                            <option value="dusk">Dusk</option>
-                                            <option value="other">Other</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="Lighting conditions" aria-describedby="basic-addon2">
-                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
 
 
-                        <div class="col-xl-2 col-lg-7">
+                        <div class="col-xl-3 col-lg-7">
 
                             <!-- Environment 2 ADDITIONAL FEATURES -->
                             <div class="card shadow mb-4">
@@ -471,334 +464,10 @@
                                     <h6 class="m-0 font-weight-bold text-primary">ADDITIONAL FACTORS</h6>
                                 </div>
                                 <div class="card-body">
+
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im"><b>Driver Age</b></label>
-                                        <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">infant</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <option value="32">32</option>
-                                            <option value="33">33</option>
-                                            <option value="34">34</option>
-                                            <option value="35">35</option>
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                            <option value="44">44</option>
-                                            <option value="45">45</option>
-                                            <option value="46">46</option>
-                                            <option value="47">47</option>
-                                            <option value="48">48</option>
-                                            <option value="49">49</option>
-                                            <option value="50">50</option>
-                                            <option value="51">51</option>
-                                            <option value="52">52</option>
-                                            <option value="53">53</option>
-                                            <option value="54">54</option>
-                                            <option value="55">55</option>
-                                            <option value="56">56</option>
-                                            <option value="57">57</option>
-                                            <option value="58">58</option>
-                                            <option value="59">59</option>
-                                            <option value="60">60</option>
-                                            <option value="61">61</option>
-                                            <option value="62">62</option>
-                                            <option value="63">63</option>
-                                            <option value="64">64</option>
-                                            <option value="65">65</option>
-                                            <option value="66">66</option>
-                                            <option value="67">67</option>
-                                            <option value="68">68</option>
-                                            <option value="69">69</option>
-                                            <option value="70">70</option>
-                                            <option value="71">71</option>
-                                            <option value="72">72</option>
-                                            <option value="73">73</option>
-                                            <option value="74">74</option>
-                                            <option value="75">75</option>
-                                            <option value="76">76</option>
-                                            <option value="77">77</option>
-                                            <option value="78">78</option>
-                                            <option value="79">79</option>
-                                            <option value="80">80</option>
-                                            <option value="81">81</option>
-                                            <option value="82">82</option>
-                                            <option value="83">83</option>
-                                            <option value="84">84</option>
-                                            <option value="85">85</option>
-                                            <option value="86">86</option>
-                                            <option value="87">87</option>
-                                            <option value="88">88</option>
-                                            <option value="89">89</option>
-                                            <option value="90">90</option>
-                                            <option value="91">91</option>
-                                            <option value="92">92</option>
-                                            <option value="93">93</option>
-                                            <option value="94">94</option>
-                                            <option value="95">95</option>
-                                            <option value="96">96</option>
-                                            <option value="97">97</option>
-                                            <option value="98">98</option>
-                                            <option value="99">99</option>
-                                            <option value="100">Older than 99</option>
-                                           
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="age_im" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
-                                        <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1960">Older than 1980</option>
-                                            <option value="1980">1980</option>                                            
-                                            <option value="1981">1981</option>                                            
-                                            <option value="1982">1982</option>                                            
-                                            <option value="1983">1983</option>
-                                            <option value="1984">1984</option>
-                                            <option value="1985">1985</option>                                            
-                                            <option value="1986">1986</option>                                            
-                                            <option value="1987">1987</option>                                           
-                                            <option value="1988">1988</option>                                            
-                                            <option value="1989">1989</option>
-                                            <option value="1990">1990</option>
-                                            <option value="1991">1991</option>                                            
-                                            <option value="1992">1992</option>                                            
-                                            <option value="1993">1993</option>                                            
-                                            <option value="1994">1994</option>                                            
-                                            <option value="1995">1995</option>
-                                            <option value="1996">1996</option>                                            
-                                            <option value="1997">1997</option>                                            
-                                            <option value="1998">1998</option>                                            
-                                            <option value="1999">1999</option>                                            
-                                            <option value="2000">2000</option>                                            
-                                            <option value="2001">2001</option>                                            
-                                            <option value="2002">2002</option>
-                                            <option value="2003">2003</option>
-                                            <option value="2004">2004</option>
-                                            <option value="2005">2005</option>
-                                            <option value="2006">2006</option>
-                                            <option value="2007">2007</option>
-                                            <option value="2008">2008</option>
-                                            <option value="2009">2009</option>
-                                            <option value="2010">2010</option>
-                                            <option value="2011">2011</option>
-                                            <option value="2012">2012</option>
-                                            <option value="2013">2013</option>
-                                            <option value="2014">2014</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="mod_year" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="hour"><b>Hour of Trip</b></label>
-                                        <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">12AM</option>
-                                            <option value="1">1AM</option>
-                                            <option value="2">2AM</option>
-                                            <option value="3">3AM</option>
-                                            <option value="4">4AM</option>
-                                            <option value="5">5AM</option>
-                                            <option value="6">6AM</option>
-                                            <option value="7">7AM</option>
-                                            <option value="8">8AM</option>
-                                            <option value="9">9AM</option>
-                                            <option value="10">10AM</option>
-                                            <option value="11">11AM</option>
-                                            <option value="12">12PM</option>
-                                            <option value="13">1PM</option>
-                                            <option value="14">2PM</option>
-                                            <option value="15">3PM</option>
-                                            <option value="16">4PM</option>
-                                            <option value="17">5PM</option>
-                                            <option value="18">6PM</option>
-                                            <option value="19">7PM</option>
-                                            <option value="20">8PM</option>
-                                            <option value="21">9PM</option>
-                                            <option value="22">10PM</option>
-                                            <option value="23">11PM</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="hour" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="vspd_lim"><b>Speed Limit</b></label>
-                                        <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH or more</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="vspd_lim" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
-                                        <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH</option>
-                                            <option value="85">85 MPH</option>
-                                            <option value="90">90 MPH</option>
-                                            <option value="95">95 MPH</option>
-                                            <option value="100">100 MPH</option>
-                                            <option value="105">105 MPH</option>
-                                            <option value="110">110 MPH</option>
-                                            <option value="115">115 MPH</option>
-                                            <option value="120">120 MPH</option>
-                                            <option value="125">125 MPH</option>
-                                            <option value="130">130 MPH</option>
-                                            <option value="135">135 MPH</option>
-                                            <option value="140">140 MPH</option>
-                                            <option value="145">145 MPH</option>
-                                            <option value="150">150 MPH</option>
-                                            <option value="155">Faster than 150 MPH</option>                                            
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="trav_speed" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
-                                        <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1">1 (just the driver)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">More than 15</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="numoccs" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
-                                        <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No damage</option>
-                                            <option value="1">Minor damage</option>
-                                            <option value="2">Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
-                                        <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="No_seatbelt">None</option>
-                                            <option value="Seatbelt">Seatbelt</option>
-                                            <option value="Child_restraint">Child seat / booster</option>
-                                            <option value="Harness">Multipoint harness</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="rest_usename_No_seatbelt" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="sex_imname"><b>Driver Sex</b></label>
-                                        <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Female</option>
-                                            <option value="1">Male</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="sex_imname" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
-                                        <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Urban</option>
-                                            <option value="1">City</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="urban-city" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="light-conditions">Light Conditions</label>
+                                        <label for="light-conditions"><b>Light Conditions</b></label>
                                         <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="daylight">Daylight</option>
                                             <option value="dark">Dark</option>
@@ -809,12 +478,171 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="Lighting conditions" aria-describedby="basic-addon2">
                                     </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="weather"><b>Weather conditions</b></label>
+                                        <select id="weather" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="clear">Clear</option>
+                                            <option value="cloudy">Cloudy</option>
+                                            <option value="rain_sleet">Rain / selected</option>
+                                            <option value="snow_blowsnow">Snow / blowing snow</option>
+                                            <option value="fog_smoke">Fog / smoke</option>
+                                            <option value="blowing_dirt">Blowing dirt</option>
+                                            <option value="windy">Windy</option>
+                                            <option value="freezing_rain">Freezing rain</option>
+                                            <option value="other">Other</option>
+                                            <option value="45">45 MPH</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="weather" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="bdytyp"><b>Vehicle body type</b></label>
+                                        <select id="bdytyp" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="two_door">2-door sedan</option>
+                                            <option value="four_door">4-door sedan</option>
+                                            <option value="convertable">Convertable</option>
+                                            <option value="small_suv_truck">Small SUV/truck</option>
+                                            <option value="large_suv">Large SUV</option>
+                                            <option value="van">Van</option>
+                                            <option value="truck">Truck</option>
+                                            <option value="motorcycle_trike">Motorcycle/trike</option>
+                                            <option value="bus">Bus</option>
+                                            <option value="work_equip">Construction/farm equipment</option>
+                                            <option value="motorhome">Motorhome/RV</option>
+                                            <option value="atv_rec">ATV/rec vehicle</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="bdytyp" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="make_country"><b>Country vehicle made</b></label>
+                                          <select id="make_country" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="China">China</option>
+                                            <option value="England">England</option>
+                                            <option value="Germany">Germany</option>
+                                            <option value="Italy">Italy</option>
+                                            <option value="Japan">Japan</option>
+                                            <option value="Korea">Korea</option>
+                                            <option value="Sweden">Sweden</option>
+                                            <option value="USA">USA</option>
+                                            <option value="Other">Other-car</option>
+                                            <option value="Motorcycle">Other-motorcycle</option>
+                                            <option value="Truck">Other-truck</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="make_country" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="towing"><b>Towing a trailer?</b></label>
+                                        <select id="towing" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="towing" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="vtrafwayname"><b>Where driving</b></label>
+                                        <select id="vtrafwayname" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="one_way">One-way</option>
+                                            <option value="two_way">Two-way no median</option>                                            
+                                            <option value="two_way_div_bar">Two-way with barrier</option>                                            
+                                            <option value="two_way_div_nobar">Two-way no barrier</option>                                            
+                                            <option value="on_ramp">On-ramp/exit</option>
+                                            <option value="park_drive">Parking lot/driveway</option>
+                                        </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="vtrafwayname" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="workzone"><b>In a workzone?</b></label>
+                                        <select id="workzone" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="workzone" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="speedrel"><b>Crash is speed related?</b></label>
+                                        <select id="speedrel" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="Lighting conditions" aria-describedby="basic-addon2">
+                                    </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="p_crash"><b>Movement prior to crash</b></label>
+                                        <select id="p_crash" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="straight">Going straight</option>
+                                            <option value="stop_back">Stopped or backing up</option>
+                                            <option value="start">Starting on raod</option>
+                                            <option value="disable_park">Disabled / parked</option>
+                                            <option value="merging">Merging</option>
+                                            <option value="turn_right">Turning right</option>
+                                            <option value="turn_left">Turnign left</option>
+                                            <option value="curve">On a curve</option>
+                                            <option value="change_lane">Changing lanes</option>
+                                            <option value="passing">Passing</option>
+                                            <option value="avoid_veh">Avoidance maneuver</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="p_crash" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="most_harm"><b>Most harmful event</b></label>
+                                        <select id="most_harm" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="animal_ped">Animal / pedestrian</option>
+                                            <option value="barrier">Barrier</option>
+                                            <option value="fire">Fire</option>
+                                            <option value="fallout_inj">Falling out / medical cause</option>
+                                            <option value="lost_control">Loss of control</option>
+                                            <option value="moving_veh">Moving vehicle</option>
+                                            <option value="parked_veh">Parked vehicle</option>
+                                            <option value="fixed_obj">Fixed manmade object</option>
+                                            <option value="nat_obj">Fixed natural object</option>
+                                            <option value="terrain">Terrain</option>
+                                            <option value="train">Train</option>
+                                            <option value="water">Water</option>
+                                            <option value="object">Object hits vehicle</option>
+                                            <option value="unknown">Unknown</option>
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="most_harm" aria-describedby="basic-addon2">
+                                    </div>
+
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+
+                                    
+
                                 </div>
                             </div>
 
                         </div>
 
-                        <div class="col-xl-2 col-lg-7">
+                        <div class="col-xl-3 col-lg-7">
 
                             <!-- Environment 3 ADDITIONAL FEATURES -->
                             <div class="card shadow mb-4">
@@ -824,693 +652,131 @@
                                 <div class="card-body">
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im"><b>Driver Age</b></label>
-                                        <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">infant</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <option value="32">32</option>
-                                            <option value="33">33</option>
-                                            <option value="34">34</option>
-                                            <option value="35">35</option>
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                            <option value="44">44</option>
-                                            <option value="45">45</option>
-                                            <option value="46">46</option>
-                                            <option value="47">47</option>
-                                            <option value="48">48</option>
-                                            <option value="49">49</option>
-                                            <option value="50">50</option>
-                                            <option value="51">51</option>
-                                            <option value="52">52</option>
-                                            <option value="53">53</option>
-                                            <option value="54">54</option>
-                                            <option value="55">55</option>
-                                            <option value="56">56</option>
-                                            <option value="57">57</option>
-                                            <option value="58">58</option>
-                                            <option value="59">59</option>
-                                            <option value="60">60</option>
-                                            <option value="61">61</option>
-                                            <option value="62">62</option>
-                                            <option value="63">63</option>
-                                            <option value="64">64</option>
-                                            <option value="65">65</option>
-                                            <option value="66">66</option>
-                                            <option value="67">67</option>
-                                            <option value="68">68</option>
-                                            <option value="69">69</option>
-                                            <option value="70">70</option>
-                                            <option value="71">71</option>
-                                            <option value="72">72</option>
-                                            <option value="73">73</option>
-                                            <option value="74">74</option>
-                                            <option value="75">75</option>
-                                            <option value="76">76</option>
-                                            <option value="77">77</option>
-                                            <option value="78">78</option>
-                                            <option value="79">79</option>
-                                            <option value="80">80</option>
-                                            <option value="81">81</option>
-                                            <option value="82">82</option>
-                                            <option value="83">83</option>
-                                            <option value="84">84</option>
-                                            <option value="85">85</option>
-                                            <option value="86">86</option>
-                                            <option value="87">87</option>
-                                            <option value="88">88</option>
-                                            <option value="89">89</option>
-                                            <option value="90">90</option>
-                                            <option value="91">91</option>
-                                            <option value="92">92</option>
-                                            <option value="93">93</option>
-                                            <option value="94">94</option>
-                                            <option value="95">95</option>
-                                            <option value="96">96</option>
-                                            <option value="97">97</option>
-                                            <option value="98">98</option>
-                                            <option value="99">99</option>
-                                            <option value="100">Older than 99</option>
-                                           
+                                        <label for="month"><b>Month</b></label>
+                                        <select id="month" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="Jan">January</option>
+                                            <option value="Feb">February</option>
+                                            <option value="Mar">March</option>
+                                            <option value="Apr">April</option>
+                                            <option value="May">May</option>
+                                            <option value="Jun">June</option>
+                                            <option value="Jul">July</option>
+                                            <option value="Aug">August</option>
+                                            <option value="Sep">September</option>
+                                            <option value="Oct">October</option>
+                                            <option value="Nov">November</option>
+                                            <option value="Dec">December</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="age_im" aria-describedby="basic-addon2">
+                                aria-label="month" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
-                                        <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1960">Older than 1980</option>
-                                            <option value="1980">1980</option>                                            
-                                            <option value="1981">1981</option>                                            
-                                            <option value="1982">1982</option>                                            
-                                            <option value="1983">1983</option>
-                                            <option value="1984">1984</option>
-                                            <option value="1985">1985</option>                                            
-                                            <option value="1986">1986</option>                                            
-                                            <option value="1987">1987</option>                                           
-                                            <option value="1988">1988</option>                                            
-                                            <option value="1989">1989</option>
-                                            <option value="1990">1990</option>
-                                            <option value="1991">1991</option>                                            
-                                            <option value="1992">1992</option>                                            
-                                            <option value="1993">1993</option>                                            
-                                            <option value="1994">1994</option>                                            
-                                            <option value="1995">1995</option>
-                                            <option value="1996">1996</option>                                            
-                                            <option value="1997">1997</option>                                            
-                                            <option value="1998">1998</option>                                            
-                                            <option value="1999">1999</option>                                            
-                                            <option value="2000">2000</option>                                            
-                                            <option value="2001">2001</option>                                            
-                                            <option value="2002">2002</option>
-                                            <option value="2003">2003</option>
-                                            <option value="2004">2004</option>
-                                            <option value="2005">2005</option>
-                                            <option value="2006">2006</option>
-                                            <option value="2007">2007</option>
-                                            <option value="2008">2008</option>
-                                            <option value="2009">2009</option>
-                                            <option value="2010">2010</option>
-                                            <option value="2011">2011</option>
-                                            <option value="2012">2012</option>
-                                            <option value="2013">2013</option>
-                                            <option value="2014">2014</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
+                                        <label for="day_week"><b>Day of the week</b></label>
+                                        <select id="day_week" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="Sun">Sunday</option>
+                                            <option value="Mon">Monday</option>
+                                            <option value="Tues">Tuesday</option>
+                                            <option value="Wed">Wednesday</option>
+                                            <option value="Thurs">Thursday</option>
+                                            <option value="Fri">Friday</option>
+                                            <option value="Sat">Saturday</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="mod_year" aria-describedby="basic-addon2">
+                                aria-label="day_week" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="hour"><b>Hour of Trip</b></label>
-                                        <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">12AM</option>
-                                            <option value="1">1AM</option>
-                                            <option value="2">2AM</option>
-                                            <option value="3">3AM</option>
-                                            <option value="4">4AM</option>
-                                            <option value="5">5AM</option>
-                                            <option value="6">6AM</option>
-                                            <option value="7">7AM</option>
-                                            <option value="8">8AM</option>
-                                            <option value="9">9AM</option>
-                                            <option value="10">10AM</option>
-                                            <option value="11">11AM</option>
-                                            <option value="12">12PM</option>
-                                            <option value="13">1PM</option>
-                                            <option value="14">2PM</option>
-                                            <option value="15">3PM</option>
-                                            <option value="16">4PM</option>
-                                            <option value="17">5PM</option>
-                                            <option value="18">6PM</option>
-                                            <option value="19">7PM</option>
-                                            <option value="20">8PM</option>
-                                            <option value="21">9PM</option>
-                                            <option value="22">10PM</option>
-                                            <option value="23">11PM</option>
-                                          </select
+                                        <label for="seat_name"><b>Seating position</b></label>
+                                        <select id="seat_name" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="driver">Driver</option>
+                                            <option value="front_pass">Front passenger</option>
+                                            <option value="second">Second row</option>
+                                            <option value="third_fourth">Third or fourth row</option>
+                                            <option value="outside">Riding outside</option>
+                                            <option value="cargo">Cargo area</option>
+                                            <option value="trailer">Trailer</option>
+                                        </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="hour" aria-describedby="basic-addon2">
+                                aria-label="seat_name" aria-describedby="basic-addon2">
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="vspd_lim"><b>Speed Limit</b></label>
-                                        <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH or more</option>
+                                        <label for="restraint_misuse"><b>Misusing restraint?</b></label>
+                                        <select id="restraint_misuse" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="vspd_lim" aria-describedby="basic-addon2">
+                                aria-label="restraint_misuse" aria-describedby="basic-addon2">
                                     </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
-                                        <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH</option>
-                                            <option value="85">85 MPH</option>
-                                            <option value="90">90 MPH</option>
-                                            <option value="95">95 MPH</option>
-                                            <option value="100">100 MPH</option>
-                                            <option value="105">105 MPH</option>
-                                            <option value="110">110 MPH</option>
-                                            <option value="115">115 MPH</option>
-                                            <option value="120">120 MPH</option>
-                                            <option value="125">125 MPH</option>
-                                            <option value="130">130 MPH</option>
-                                            <option value="135">135 MPH</option>
-                                            <option value="140">140 MPH</option>
-                                            <option value="145">145 MPH</option>
-                                            <option value="150">150 MPH</option>
-                                            <option value="155">Faster than 150 MPH</option>                                            
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="trav_speed" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
-                                        <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1">1 (just the driver)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">More than 15</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="numoccs" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
-                                        <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No damage</option>
-                                            <option value="1">Minor damage</option>
-                                            <option value="2">Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
-                                        <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="No_seatbelt">None</option>
-                                            <option value="Seatbelt">Seatbelt</option>
-                                            <option value="Child_restraint">Child seat / booster</option>
-                                            <option value="Harness">Multipoint harness</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="rest_usename_No_seatbelt" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="sex_imname"><b>Driver Sex</b></label>
-                                        <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Female</option>
-                                            <option value="1">Male</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="sex_imname" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
-                                        <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Urban</option>
-                                            <option value="1">City</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="urban-city" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="light-conditions">Light Conditions</label>
-                                        <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="daylight">Daylight</option>
-                                            <option value="dark">Dark</option>
-                                            <option value="dawn">Dawn</option>
-                                            <option value="dusk">Dusk</option>
-                                            <option value="other">Other</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="Lighting conditions" aria-describedby="basic-addon2">
-                                    </div>
-                                </div>
-                            </div>
 
-                        </div>
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="helmet_use"><b>Helmet worn?</b></label>
+                                        <select id="helmet_use" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>                                            
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="helmet_use" aria-describedby="basic-addon2">
+                                    </div>
 
-                        <div class="col-xl-2 col-lg-7">
+                                    <div class="input-group">
+                                        <drop
+                                        <label for="helmet_misuse"><b>Misusing helmet?</b></label>
+                                        <select id="helmet_misuse" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
+                                          </select
+                                        <input type="text" class="form-control bg-light"
+                                aria-label="helmet_misuse" aria-describedby="basic-addon2">
+                                    </div>
 
-                            <!-- Environment 4 ADDITIONAL FEATURES -->
-                            <div class="card shadow mb-4">
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">ADDITIONAL FACTORS</h6>
-                                </div>
-                                <div class="card-body">
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im"><b>Driver Age</b></label>
-                                        <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">infant</option>
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">16</option>
-                                            <option value="17">17</option>
-                                            <option value="18">18</option>
-                                            <option value="19">19</option>
-                                            <option value="20">20</option>
-                                            <option value="21">21</option>
-                                            <option value="22">22</option>
-                                            <option value="23">23</option>
-                                            <option value="24">24</option>
-                                            <option value="25">25</option>
-                                            <option value="26">26</option>
-                                            <option value="27">27</option>
-                                            <option value="28">28</option>
-                                            <option value="29">29</option>
-                                            <option value="30">30</option>
-                                            <option value="31">31</option>
-                                            <option value="32">32</option>
-                                            <option value="33">33</option>
-                                            <option value="34">34</option>
-                                            <option value="35">35</option>
-                                            <option value="36">36</option>
-                                            <option value="37">37</option>
-                                            <option value="38">38</option>
-                                            <option value="39">39</option>
-                                            <option value="40">40</option>
-                                            <option value="41">41</option>
-                                            <option value="42">42</option>
-                                            <option value="43">43</option>
-                                            <option value="44">44</option>
-                                            <option value="45">45</option>
-                                            <option value="46">46</option>
-                                            <option value="47">47</option>
-                                            <option value="48">48</option>
-                                            <option value="49">49</option>
-                                            <option value="50">50</option>
-                                            <option value="51">51</option>
-                                            <option value="52">52</option>
-                                            <option value="53">53</option>
-                                            <option value="54">54</option>
-                                            <option value="55">55</option>
-                                            <option value="56">56</option>
-                                            <option value="57">57</option>
-                                            <option value="58">58</option>
-                                            <option value="59">59</option>
-                                            <option value="60">60</option>
-                                            <option value="61">61</option>
-                                            <option value="62">62</option>
-                                            <option value="63">63</option>
-                                            <option value="64">64</option>
-                                            <option value="65">65</option>
-                                            <option value="66">66</option>
-                                            <option value="67">67</option>
-                                            <option value="68">68</option>
-                                            <option value="69">69</option>
-                                            <option value="70">70</option>
-                                            <option value="71">71</option>
-                                            <option value="72">72</option>
-                                            <option value="73">73</option>
-                                            <option value="74">74</option>
-                                            <option value="75">75</option>
-                                            <option value="76">76</option>
-                                            <option value="77">77</option>
-                                            <option value="78">78</option>
-                                            <option value="79">79</option>
-                                            <option value="80">80</option>
-                                            <option value="81">81</option>
-                                            <option value="82">82</option>
-                                            <option value="83">83</option>
-                                            <option value="84">84</option>
-                                            <option value="85">85</option>
-                                            <option value="86">86</option>
-                                            <option value="87">87</option>
-                                            <option value="88">88</option>
-                                            <option value="89">89</option>
-                                            <option value="90">90</option>
-                                            <option value="91">91</option>
-                                            <option value="92">92</option>
-                                            <option value="93">93</option>
-                                            <option value="94">94</option>
-                                            <option value="95">95</option>
-                                            <option value="96">96</option>
-                                            <option value="97">97</option>
-                                            <option value="98">98</option>
-                                            <option value="99">99</option>
-                                            <option value="100">Older than 99</option>
-                                           
+                                        <label for="driv_alcohol"><b>Driver alcohol involvement</b></label>
+                                        <select id="driv_alcohol" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="age_im" aria-describedby="basic-addon2">
+                                aria-label="driv_alcohol" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
-                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
-                                        <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1960">Older than 1980</option>
-                                            <option value="1980">1980</option>                                            
-                                            <option value="1981">1981</option>                                            
-                                            <option value="1982">1982</option>                                            
-                                            <option value="1983">1983</option>
-                                            <option value="1984">1984</option>
-                                            <option value="1985">1985</option>                                            
-                                            <option value="1986">1986</option>                                            
-                                            <option value="1987">1987</option>                                           
-                                            <option value="1988">1988</option>                                            
-                                            <option value="1989">1989</option>
-                                            <option value="1990">1990</option>
-                                            <option value="1991">1991</option>                                            
-                                            <option value="1992">1992</option>                                            
-                                            <option value="1993">1993</option>                                            
-                                            <option value="1994">1994</option>                                            
-                                            <option value="1995">1995</option>
-                                            <option value="1996">1996</option>                                            
-                                            <option value="1997">1997</option>                                            
-                                            <option value="1998">1998</option>                                            
-                                            <option value="1999">1999</option>                                            
-                                            <option value="2000">2000</option>                                            
-                                            <option value="2001">2001</option>                                            
-                                            <option value="2002">2002</option>
-                                            <option value="2003">2003</option>
-                                            <option value="2004">2004</option>
-                                            <option value="2005">2005</option>
-                                            <option value="2006">2006</option>
-                                            <option value="2007">2007</option>
-                                            <option value="2008">2008</option>
-                                            <option value="2009">2009</option>
-                                            <option value="2010">2010</option>
-                                            <option value="2011">2011</option>
-                                            <option value="2012">2012</option>
-                                            <option value="2013">2013</option>
-                                            <option value="2014">2014</option>
-                                            <option value="2015">2015</option>
-                                            <option value="2016">2016</option>
-                                            <option value="2017">2017</option>
-                                            <option value="2018">2018</option>
-                                            <option value="2019">2019</option>
-                                            <option value="2020">2020</option>
+                                        <label for="drinking_name"><b>Police noted drinking in car?</b></label>
+                                        <select id="drinking_name" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="mod_year" aria-describedby="basic-addon2">
+                                aria-label="drinking_name" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
-                                        <label for="hour"><b>Hour of Trip</b></label>
-                                        <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">12AM</option>
-                                            <option value="1">1AM</option>
-                                            <option value="2">2AM</option>
-                                            <option value="3">3AM</option>
-                                            <option value="4">4AM</option>
-                                            <option value="5">5AM</option>
-                                            <option value="6">6AM</option>
-                                            <option value="7">7AM</option>
-                                            <option value="8">8AM</option>
-                                            <option value="9">9AM</option>
-                                            <option value="10">10AM</option>
-                                            <option value="11">11AM</option>
-                                            <option value="12">12PM</option>
-                                            <option value="13">1PM</option>
-                                            <option value="14">2PM</option>
-                                            <option value="15">3PM</option>
-                                            <option value="16">4PM</option>
-                                            <option value="17">5PM</option>
-                                            <option value="18">6PM</option>
-                                            <option value="19">7PM</option>
-                                            <option value="20">8PM</option>
-                                            <option value="21">9PM</option>
-                                            <option value="22">10PM</option>
-                                            <option value="23">11PM</option>
+                                        <label for="alc_08"><b>Your alcohol >0.08%?</b></label>
+                                        <select id="alc_08" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="hour" aria-describedby="basic-addon2">
+                                aria-label="alc_08" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
-                                        <label for="vspd_lim"><b>Speed Limit</b></label>
-                                        <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH or more</option>
+                                        <label for="drugs"><b>Drugs involved?</b></label>
+                                        <select id="drugs" class="form-control bg-light border-0 small" onchange="predictInjury();">
+                                            <option value="0">No</option>
+                                            <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
-                                aria-label="vspd_lim" aria-describedby="basic-addon2">
+                                aria-label="drugs" aria-describedby="basic-addon2">
                                     </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
-                                        <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">0 MPH (parked)</option>
-                                            <option value="5">5 MPH</option>
-                                            <option value="10">10 MPH</option>
-                                            <option value="15">15 MPH</option>
-                                            <option value="20">20 MPH</option>
-                                            <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
-                                            <option value="35">35 MPH</option>
-                                            <option value="40">40 MPH</option>
-                                            <option value="45">45 MPH</option>
-                                            <option value="50">50 MPH</option>
-                                            <option value="55">55 MPH</option>
-                                            <option value="60">60 MPH</option>
-                                            <option value="65">65 MPH</option>
-                                            <option value="70">70 MPH</option>
-                                            <option value="75">75 MPH</option>
-                                            <option value="80">80 MPH</option>
-                                            <option value="85">85 MPH</option>
-                                            <option value="90">90 MPH</option>
-                                            <option value="95">95 MPH</option>
-                                            <option value="100">100 MPH</option>
-                                            <option value="105">105 MPH</option>
-                                            <option value="110">110 MPH</option>
-                                            <option value="115">115 MPH</option>
-                                            <option value="120">120 MPH</option>
-                                            <option value="125">125 MPH</option>
-                                            <option value="130">130 MPH</option>
-                                            <option value="135">135 MPH</option>
-                                            <option value="140">140 MPH</option>
-                                            <option value="145">145 MPH</option>
-                                            <option value="150">150 MPH</option>
-                                            <option value="155">Faster than 150 MPH</option>                                            
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="trav_speed" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
-                                        <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="1">1 (just the driver)</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                            <option value="4">4</option>
-                                            <option value="5">5</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
-                                            <option value="13">13</option>
-                                            <option value="14">14</option>
-                                            <option value="15">15</option>
-                                            <option value="16">More than 15</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="numoccs" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
-                                        <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No damage</option>
-                                            <option value="1">Minor damage</option>
-                                            <option value="2">Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
-                                        <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="No_seatbelt">None</option>
-                                            <option value="Seatbelt">Seatbelt</option>
-                                            <option value="Child_restraint">Child seat / booster</option>
-                                            <option value="Harness">Multipoint harness</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="rest_usename_No_seatbelt" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="sex_imname"><b>Driver Sex</b></label>
-                                        <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Female</option>
-                                            <option value="1">Male</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="sex_imname" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
-                                        <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Urban</option>
-                                            <option value="1">City</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="urban-city" aria-describedby="basic-addon2">
-                                    </div>
-                                    <div class="input-group">
-                                        <drop
-                                        <label for="light-conditions">Light Conditions</label>
-                                        <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="daylight">Daylight</option>
-                                            <option value="dark">Dark</option>
-                                            <option value="dawn">Dawn</option>
-                                            <option value="dusk">Dusk</option>
-                                            <option value="other">Other</option>
-                                          </select
-                                        <input type="text" class="form-control bg-light"
-                                aria-label="Lighting conditions" aria-describedby="basic-addon2">
-                                    </div>
+
                                 </div>
                             </div>
 
