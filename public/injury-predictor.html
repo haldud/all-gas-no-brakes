@@ -20,6 +20,11 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+    <style>
+        .important{
+   color: red;
+}
+    </style>
 </head>
 
 <body id="page-top">
@@ -106,13 +111,13 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. We've selected some key options to consider but there are more than XX to customize. Once set, click the "Show me the results!" button and you'll see a prediction of various levels of injury given your customized conditions.</p>
+                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. The items in <b><span class= "important">red</span></b> may be the most important to consider but there are more items to the right to select as well. Once set, click the "Show me the results!" button and you'll see a prediction of various levels of injury given your customized conditions.</p>
 
                     <!-- Content Row -->
                     <div class="row">
 
                         <div class="col-xl-4 col-lg-7">
-
+                            
                             <!-- Environment 1 MOST IMPORTANT FEATURES -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
@@ -121,7 +126,7 @@
                                 <div class="card-body">
                                     <div class="input-group">
                                         <drop
-                                        <label for="age_im"><b>Passenger Age</b></label>
+                                        <label for="age_im"><b><span class="important">Passenger Age</span></b></label>
                                         <select id="age_im" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">infant</option>
                                             <option value="1">1</option>
@@ -231,7 +236,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="mod_year"><b>Vehicle Model Year</b></label>
+                                        <label for="mod_year"><b><span class="important">Vehicle Model Year</span></b></label>
                                         <select id="mod_year" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1960">Older than 1980</option>
                                             <option value="1980">1980</option>                                            
@@ -281,7 +286,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="hour"><b>Hour of Trip</b></label>
+                                        <label for="hour"><b><span class="important">Hour of Trip</span></b></label>
                                         <select id="hour" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">12AM</option>
                                             <option value="1">1AM</option>
@@ -313,7 +318,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="vspd_lim"><b>Speed Limit</b></label>
+                                        <label for="vspd_lim"><b><span class="important">Speed Limit</span></b></label>
                                         <select id="vspd_lim" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
@@ -338,7 +343,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="trav_speed"><b>Vehicle Speed</b></label>
+                                        <label for="trav_speed"><b><span class="important">Vehicle Speed</span></b></label>
                                         <select id="trav_speed" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">0 MPH (parked)</option>
                                             <option value="5">5 MPH</option>
@@ -378,7 +383,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="numoccs"><b>Number of Occupants in Vehicle</b></label>
+                                        <label for="numoccs"><b><span class="important">Number of Occupants in Vehicle</span></b></label>
                                         <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1">1 (just the driver)</option>
                                             <option value="2">2</option>
@@ -402,7 +407,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="deformedname_Disabling_Damage"><b>Vehicle Damage</b></label>
+                                        <label for="deformedname_Disabling_Damage"><b><span class="important">Vehicle Damage</span></b></label>
                                         <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">No damage</option>
                                             <option value="1">Minor damage</option>
@@ -414,7 +419,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="rest_usename_No_seatbelt"><b>Type of Restraint</b></label>
+                                        <label for="rest_usename_No_seatbelt"><b><span class="important">Type of Restraint</span></b></label>
                                         <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="No_seatbelt">None</option>
                                             <option value="Seatbelt">Seatbelt</option>
@@ -426,7 +431,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="sex_imname"><b>Driver Sex</b></label>
+                                        <label for="sex_imname"><b><span class="important">Driver's Sex</span></b></label>
                                         <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">Female</option>
                                             <option value="1">Male</option>
@@ -436,7 +441,7 @@
                                     </div>
                                     <div class="input-group">
                                         <drop
-                                        <label for="urban-city"><b>Driving in Urban or City Setting</b></label>
+                                        <label for="urban-city"><b><span class="important">Driving in Urban or City Setting</span></b></label>
                                         <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">Urban</option>
                                             <option value="1">City</option>
