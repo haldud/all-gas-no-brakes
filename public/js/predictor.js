@@ -68,6 +68,8 @@ var fatalInjuryModel = loadFatalInjuryModel().then((model) => {
 function predictInjury() {
   console.log("predicting injury...");
 
+  resetPredictions();
+
   // Get the models to use with predictions.
   var anyInput = getModelInputBasedOnProvidedFields('anyInjury');
   console.log("any model input:", anyInput);
@@ -85,13 +87,39 @@ function predictInjury() {
   predictFatalInjury(fatalInput);
 }
 
+function resetPredictions() {
+  var anyInjuryPredictionImage = document.getElementById("any-injury-prediction-image");
+  var anyInjuryPredictionText = document.getElementById("any-injury-prediction-text");
+  var seriousInjuryPredictionImage = document.getElementById("serious-injury-prediction-image");
+  var seriousInjuryPredictionText = document.getElementById("serious-injury-prediction-text");
+  var fatalInjuryPredictionImage = document.getElementById("fatal-injury-prediction-image");
+  var fatalInjuryPredictionText = document.getElementById("fatal-injury-prediction-text");
+  let spinnerClassName = 'fas fa-spinner fa-6x text-primary text-center';
+  let runningPrediction = 'Running prediction';
+  anyInjuryPredictionImage.className = spinnerClassName;
+  seriousInjuryPredictionImage.className = spinnerClassName;
+  fatalInjuryPredictionImage.className = spinnerClassName;
+  anyInjuryPredictionText.innerHTML = runningPrediction;
+  seriousInjuryPredictionText.innerHTML = runningPrediction;
+  fatalInjuryPredictionText.innerHTML = runningPrediction;
+}
+
 function predictAnyInjury(modelInput) {
   console.log("predicting any injury...");
   var anyInjuryResult = anyInjuryModel.predict(modelInput);
   console.log("any injury prediction:", anyInjuryResult);
   var data = anyInjuryResult.dataSync();
   console.log("any injury prediction data:", data);
-  drawLikelihoodChart('any-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of any injury');
+  var anyInjuryPredictionImage = document.getElementById("any-injury-prediction-image");
+  var anyInjuryPredictionText = document.getElementById("any-injury-prediction-text");
+  if (data[0] >= .5) {
+    anyInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    anyInjuryPredictionText.innerHTML = "Likely of an injury.";
+  }
+  else {
+    anyInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    anyInjuryPredictionText.innerHTML = "Unlikely of an injury.";
+  }
 }
 
 function predictSeriousInjury(modelInput) {
@@ -100,7 +128,16 @@ function predictSeriousInjury(modelInput) {
   console.log("serious injury prediction:", seriousInjuryResult);
   var data = seriousInjuryResult.dataSync();
   console.log("serious injury prediction data:", data);
-  drawLikelihoodChart('serious-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of serious injury');
+  var seriousInjuryPredictionImage = document.getElementById("serious-injury-prediction-image");
+  var seriousInjuryPredictionText = document.getElementById("serious-injury-prediction-text");
+  if (data[0] >= .5) {
+    seriousInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    seriousInjuryPredictionText.innerHTML = "Likely of serious injury.";
+  }
+  else {
+    seriousInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    seriousInjuryPredictionText.innerHTML = "Unlikely of serious injury.";
+  }
 }
 
 function predictFatalInjury(modelInput) {
@@ -109,7 +146,16 @@ function predictFatalInjury(modelInput) {
   console.log("fatal injury prediction:", fatalInjuryResult);
   var data = fatalInjuryResult.dataSync();
   console.log("fatal injury prediction data:", data);
-  drawLikelihoodChart('fatal-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of fatal injury');
+  var fatalInjuryPredictionImage = document.getElementById("fatal-injury-prediction-image");
+  var fatalInjuryPredictionText = document.getElementById("fatal-injury-prediction-text");
+  if (data[0] >= .5) {
+    fatalInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    fatalInjuryPredictionText.innerHTML = "Likely of fatal injury.";
+  }
+  else {
+    fatalInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    fatalInjuryPredictionText.innerHTML = "Unlikely of fatal injury.";
+  }
 }
 
 function getModelInputBasedOnProvidedFields(modelType) {
@@ -340,55 +386,6 @@ function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehi
   console.log('vector input:', vectorInput);
 
   return tf.tensor(vectorInput);
-}
-
-function drawLikelihoodChart(id, percent, label) {
-  new Chart(id, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: label,
-        percent: percent,
-        backgroundColor: ['#5283ff']
-      }]
-    },
-    plugins: [{
-        beforeInit: (chart) => {
-          const dataset = chart.data.datasets[0];
-          chart.data.labels = [dataset.label];
-          dataset.data = [dataset.percent, 100 - dataset.percent];
-        }
-      },
-      {
-        beforeDraw: (chart) => {
-          var width = chart.chart.width,
-            height = chart.chart.height,
-            ctx = chart.chart.ctx;
-          ctx.restore();
-          var fontSize = (height / 100).toFixed(2);
-          ctx.font = fontSize + "em sans-serif";
-          ctx.fillStyle = "#9b9b9b";
-          ctx.textBaseline = "middle";
-          var text = chart.data.datasets[0].percent + "%",
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-          ctx.fillText(text, textX, textY);
-          ctx.save();
-        }
-      }
-    ],
-    options: {
-      maintainAspectRatio: false,
-      cutoutPercentage: 75,
-      rotation: Math.PI / 2,
-      legend: {
-        display: false,
-      },
-      tooltips: {
-        filter: tooltipItem => tooltipItem.index == 0
-      }
-    }
-  });
 }
 
 async function loadAnyInjuryModel() {
