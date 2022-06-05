@@ -114,11 +114,11 @@ function predictAnyInjury(modelInput) {
   var anyInjuryPredictionText = document.getElementById("any-injury-prediction-text");
   if (data[0] >= .5) {
     anyInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
-    anyInjuryPredictionText.innerHTML = "Likely of an injury.";
+    anyInjuryPredictionText.innerHTML = "Likely injury.";
   }
   else {
     anyInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
-    anyInjuryPredictionText.innerHTML = "Unlikely of an injury.";
+    anyInjuryPredictionText.innerHTML = "Unlikely injury.";
   }
 }
 
@@ -132,11 +132,11 @@ function predictSeriousInjury(modelInput) {
   var seriousInjuryPredictionText = document.getElementById("serious-injury-prediction-text");
   if (data[0] >= .5) {
     seriousInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
-    seriousInjuryPredictionText.innerHTML = "Likely of serious injury.";
+    seriousInjuryPredictionText.innerHTML = "Likely serious injury.";
   }
   else {
     seriousInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
-    seriousInjuryPredictionText.innerHTML = "Unlikely of serious injury.";
+    seriousInjuryPredictionText.innerHTML = "Unlikely serious injury.";
   }
 }
 
@@ -150,11 +150,11 @@ function predictFatalInjury(modelInput) {
   var fatalInjuryPredictionText = document.getElementById("fatal-injury-prediction-text");
   if (data[0] >= .5) {
     fatalInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
-    fatalInjuryPredictionText.innerHTML = "Likely of fatal injury.";
+    fatalInjuryPredictionText.innerHTML = "Likely fatal injury.";
   }
   else {
     fatalInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
-    fatalInjuryPredictionText.innerHTML = "Unlikely of fatal injury.";
+    fatalInjuryPredictionText.innerHTML = "Unlikely fatal injury.";
   }
 }
 
