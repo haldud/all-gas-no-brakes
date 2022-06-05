@@ -133,9 +133,16 @@
                                     <h6 class="m-0 font-weight-bold text-primary">Data</h6>
                                 </div>
                                 <div class="card-body">
-                                    Data was downloaded from the NHTSA Crash Reporting Sampling System (CRSS) website. The data was a random sampling from millions of reported crashes each year, each dataset had over 100,000 accidents. All Gas No Brakes focused on three datasets pertaining to Accidents, Vehicles, and People. </p>
+                                    Data was downloaded from the NHTSA Crash Reporting Sampling System (CRSS) website. The data was a random sampling 
+                                    from millions of reported crashes each year, each dataset had over 100,000 accidents. All Gas No Brakes focused on three datasets pertaining to Accidents, Vehicles, and People. </p>
                                     
-                                    More words </p>
+                                    Those three datasets were put into a pgAdmin PostgreSQL database where the table was merged together. Once the merged table was created, it was put into Amazon Relational Database Service (RDS). 
+                                    Amazon RDS made the database accessible to both the web application and Python for creating machine learning models. </p>
+
+                                    Before the data could be put through a machine learning model, it was preprocessed to remove fields that did not contribute to an accident. 
+                                    For example, one field that was removed before running the model pertained to the need of transportation to a hospital for a person who had 
+                                    been in an accident. This field was more of a result of an accident instead of a determinant. A total of 30 factors were used to create the 
+                                    machine learning model that gave three outcomes (any injury, any serious injury, fatal injury).</p>
                                 </div>
                             </div>
                         </div>
