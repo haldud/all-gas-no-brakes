@@ -151,7 +151,7 @@
                                             <option value="20">20</option>
                                             <option value="21">21</option>
                                             <option value="22">22</option>
-                                            <option value="23" selected>23</option>
+                                            <option value="23">23</option>
                                             <option value="24">24</option>
                                             <option value="25">25</option>
                                             <option value="26">26</option>
@@ -193,7 +193,7 @@
                                             <option value="62">62</option>
                                             <option value="63">63</option>
                                             <option value="64">64</option>
-                                            <option value="65">65</option>
+                                            <option value="65" selected>65</option>
                                             <option value="66">66</option>
                                             <option value="67">67</option>
                                             <option value="68">68</option>
@@ -354,10 +354,10 @@
                                             <option value="15">15 MPH</option>
                                             <option value="20">20 MPH</option>
                                             <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
+                                            <option value="30" selected>30 MPH</option>
                                             <option value="35">35 MPH</option>
                                             <option value="40">40 MPH</option>
-                                            <option value="45" selected>45 MPH</option>
+                                            <option value="45">45 MPH</option>
                                             <option value="50">50 MPH</option>
                                             <option value="55">55 MPH</option>
                                             <option value="60">60 MPH</option>
@@ -416,8 +416,8 @@
                                         <select id="deformedname_Disabling_Damage" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">No damage</option>
                                             <option value="1">Minor damage</option>
-                                            <option value="2" selected>Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
+                                            <option value="2">Significant damage</option>
+                                            <option value="3" selected>Disabled/major damage</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
@@ -427,8 +427,8 @@
                                         <drop
                                         <label for="rest_usename_No_seatbelt"><b><span class="important">Type of Restraint</span></b></label>
                                         <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="No_seatbelt" selected>None</option>
-                                            <option value="Seatbelt">Seatbelt</option>
+                                            <option value="No_seatbelt">None</option>
+                                            <option value="Seatbelt" selected>Seatbelt</option>
                                             <option value="Child_restraint">Child seat / booster</option>
                                             <option value="Harness">Multipoint harness</option>
                                           </select
@@ -440,8 +440,8 @@
                                         <drop
                                         <label for="sex_imname"><b><span class="important">Driver's Sex</span></b></label>
                                         <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Female</option>
-                                            <option value="1" selected>Male</option>
+                                            <option value="0" selected>Female</option>
+                                            <option value="1">Male</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="sex_imname" aria-describedby="basic-addon2">
@@ -474,8 +474,8 @@
                                         <drop
                                         <label for="light-conditions"><b>Light Conditions</b></label>
                                         <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="daylight" selected>Daylight</option>
-                                            <option value="dark">Dark</option>
+                                            <option value="daylight">Daylight</option>
+                                            <option value="dark" selected>Dark</option>
                                             <option value="dawn">Dawn</option>
                                             <option value="dusk">Dusk</option>
                                             <option value="other">Other</option>
@@ -488,10 +488,10 @@
                                         <drop
                                         <label for="weather"><b>Weather conditions</b></label>
                                         <select id="weather" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="clear selected">Clear</option>
+                                            <option value="clear">Clear</option>
                                             <option value="cloudy">Cloudy</option>
                                             <option value="rain_sleet">Rain / selected</option>
-                                            <option value="snow_blowsnow">Snow / blowing snow</option>
+                                            <option value="snow_blowsnow" selected>Snow / blowing snow</option>
                                             <option value="fog_smoke">Fog / smoke</option>
                                             <option value="blowing_dirt">Blowing dirt</option>
                                             <option value="windy">Windy</option>
@@ -508,11 +508,11 @@
                                         <label for="bdytyp"><b>Vehicle body type</b></label>
                                         <select id="bdytyp" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="two_door">2-door sedan</option>
-                                            <option value="four_door" selected>4-door sedan</option>
+                                            <option value="four_door">4-door sedan</option>
                                             <option value="convertable">Convertible</option>
                                             <option value="small_suv_truck">Small SUV/truck</option>
                                             <option value="large_suv">Large SUV</option>
-                                            <option value="van">Van</option>
+                                            <option value="van" selected>Van</option>
                                             <option value="truck">Truck</option>
                                             <option value="motorcycle_trike">Motorcycle/trike</option>
                                             <option value="bus">Bus</option>
@@ -560,9 +560,9 @@
                                         <label for="vtrafwayname"><b>Where driving</b></label>
                                         <select id="vtrafwayname" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="one_way">One-way</option>
-                                            <option value="two_way" selected>Two-way no median</option>                                            
+                                            <option value="two_way">Two-way no median</option>                                            
                                             <option value="two_way_div_bar">Two-way with barrier</option>                                            
-                                            <option value="two_way_div_nobar">Two-way no barrier</option>                                            
+                                            <option value="two_way_div_nobar" selected>Two-way no barrier</option>                                            
                                             <option value="on_ramp">On-ramp/exit</option>
                                             <option value="park_drive">Parking lot/driveway</option>
                                         </select
@@ -602,8 +602,8 @@
                                             <option value="disable_park">Disabled / parked</option>
                                             <option value="merging">Merging</option>
                                             <option value="turn_right">Turning right</option>
-                                            <option value="turn_left" selected>Turnign left</option>
-                                            <option value="curve">On a curve</option>
+                                            <option value="turn_left">Turnign left</option>
+                                            <option value="curve" selected>On a curve</option>
                                             <option value="change_lane">Changing lanes</option>
                                             <option value="passing">Passing</option>
                                             <option value="u-turn">U-Turn</option>
@@ -656,13 +656,13 @@
                                             <option value="Mar">March</option>
                                             <option value="Apr">April</option>
                                             <option value="May">May</option>
-                                            <option value="Jun" selected>June</option>
+                                            <option value="Jun">June</option>
                                             <option value="Jul">July</option>
                                             <option value="Aug">August</option>
                                             <option value="Sep">September</option>
                                             <option value="Oct">October</option>
                                             <option value="Nov">November</option>
-                                            <option value="Dec">December</option>
+                                            <option value="Dec" selected>December</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="month" aria-describedby="basic-addon2">
@@ -675,9 +675,9 @@
                                             <option value="Sun">Sunday</option>
                                             <option value="Mon">Monday</option>
                                             <option value="Tues">Tuesday</option>
-                                            <option value="Wed">Wednesday</option>
+                                            <option value="Wed" selected>Wednesday</option>
                                             <option value="Thurs">Thursday</option>
-                                            <option value="Fri" selected>Friday</option>
+                                            <option value="Fri">Friday</option>
                                             <option value="Sat">Saturday</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -713,9 +713,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="helmet_use" selected><b>Helmet worn?</b></label>
+                                        <label for="helmet_use"><b>Helmet worn?</b></label>
                                         <select id="helmet_use" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>                                            
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -724,9 +724,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="helmet_misuse" selected><b>Misusing helmet?</b></label>
+                                        <label for="helmet_misuse"><b>Misusing helmet?</b></label>
                                         <select id="helmet_misuse" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -735,9 +735,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="driv_alcohol" selected><b>Driver alcohol involvement</b></label>
+                                        <label for="driv_alcohol"><b>Driver alcohol involvement</b></label>
                                         <select id="driv_alcohol" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -746,9 +746,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="drinking_name" selected><b>Police noted drinking in car?</b></label>
+                                        <label for="drinking_name"><b>Police noted drinking in car?</b></label>
                                         <select id="drinking_name" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -757,9 +757,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="alc_08" selected><b>Your alcohol >0.08%?</b></label>
+                                        <label for="alc_08"><b>Your alcohol >0.08%?</b></label>
                                         <select id="alc_08" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -768,9 +768,9 @@
 
                                     <div class="input-group">
                                         <drop
-                                        <label for="drugs" selected><b>Drugs involved?</b></label>
+                                        <label for="drugs"><b>Drugs involved?</b></label>
                                         <select id="drugs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
