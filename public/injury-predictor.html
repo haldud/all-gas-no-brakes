@@ -111,17 +111,17 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. The items in <b><span class= "important">red</span></b> may be the most important to consider but there are more items to the right to select as well. Once set, click the "Show me the results!" button and you'll see a prediction of various levels of injury given your customized conditions.</p>
+                    <p class="mb-4">Use the fields below to describe your future (or past!) trip. The items in <b><span class= "important">red</span></b> may be the most important to consider but there are more items to the right to select as well. Each time you change a field, the prediction of various levels of injury will be updated immeadiately.</p>
 
                     <!-- Content Row -->
                     <div class="row">
 
-                        <div class="col-xl-4 col-lg-7">
+                        <div class="col-xl-4 col-lg-6">
                             
                             <!-- Environment 1 MOST IMPORTANT FEATURES -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Describe the Conditions of Your Trip</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Primary factors predicting injury</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="input-group">
@@ -193,7 +193,7 @@
                                             <option value="62">62</option>
                                             <option value="63">63</option>
                                             <option value="64">64</option>
-                                            <option value="65">65</option>
+                                            <option value="65" selected>65</option>
                                             <option value="66">66</option>
                                             <option value="67">67</option>
                                             <option value="68">68</option>
@@ -228,12 +228,12 @@
                                             <option value="97">97</option>
                                             <option value="98">98</option>
                                             <option value="99">99</option>
-                                            <option value="100">Older than 99</option>
-                                           
+                                            <option value="100">Older than 99</option>                                           
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="age_im" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="mod_year"><b><span class="important">Vehicle Model Year</span></b></label>
@@ -274,7 +274,7 @@
                                             <option value="2012">2012</option>
                                             <option value="2013">2013</option>
                                             <option value="2014">2014</option>
-                                            <option value="2015">2015</option>
+                                            <option value="2015" selected>2015</option>
                                             <option value="2016">2016</option>
                                             <option value="2017">2017</option>
                                             <option value="2018">2018</option>
@@ -284,6 +284,7 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="mod_year" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="hour"><b><span class="important">Hour of Trip</span></b></label>
@@ -305,7 +306,7 @@
                                             <option value="14">2PM</option>
                                             <option value="15">3PM</option>
                                             <option value="16">4PM</option>
-                                            <option value="17">5PM</option>
+                                            <option value="17" selected>5PM</option>
                                             <option value="18">6PM</option>
                                             <option value="19">7PM</option>
                                             <option value="20">8PM</option>
@@ -316,6 +317,7 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="hour" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="vspd_lim"><b><span class="important">Speed Limit</span></b></label>
@@ -326,7 +328,7 @@
                                             <option value="15">15 MPH</option>
                                             <option value="20">20 MPH</option>
                                             <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
+                                            <option value="30" selected>30 MPH</option>
                                             <option value="35">35 MPH</option>
                                             <option value="40">40 MPH</option>
                                             <option value="45">45 MPH</option>
@@ -341,6 +343,7 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="vspd_lim" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="trav_speed"><b><span class="important">Vehicle Speed</span></b></label>
@@ -351,7 +354,7 @@
                                             <option value="15">15 MPH</option>
                                             <option value="20">20 MPH</option>
                                             <option value="25">25 MPH</option>
-                                            <option value="30">30 MPH</option>
+                                            <option value="30" selected>30 MPH</option>
                                             <option value="35">35 MPH</option>
                                             <option value="40">40 MPH</option>
                                             <option value="45">45 MPH</option>
@@ -381,12 +384,13 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="trav_speed" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="numoccs"><b><span class="important">Number of Occupants in Vehicle</span></b></label>
                                         <select id="numoccs" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="1">1 (just the driver)</option>
-                                            <option value="2">2</option>
+                                            <option value="2" selected>2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
                                             <option value="5">5</option>
@@ -405,6 +409,7 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="numoccs" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="deformedname_Disabling_Damage"><b><span class="important">Vehicle Damage</span></b></label>
@@ -412,56 +417,56 @@
                                             <option value="0">No damage</option>
                                             <option value="1">Minor damage</option>
                                             <option value="2">Significant damage</option>
-                                            <option value="3">Disabled/major damage</option>
+                                            <option value="3" selected>Disabled/major damage</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="deformedname_Disabling_Damage" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="rest_usename_No_seatbelt"><b><span class="important">Type of Restraint</span></b></label>
                                         <select id="rest_usename_No_seatbelt" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="No_seatbelt">None</option>
-                                            <option value="Seatbelt">Seatbelt</option>
+                                            <option value="Seatbelt" selected>Seatbelt</option>
                                             <option value="Child_restraint">Child seat / booster</option>
                                             <option value="Harness">Multipoint harness</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="rest_usename_No_seatbelt" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="sex_imname"><b><span class="important">Driver's Sex</span></b></label>
                                         <select id="sex_imname" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Female</option>
+                                            <option value="0" selected>Female</option>
                                             <option value="1">Male</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="sex_imname" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
-                                        <label for="urban-city"><b><span class="important">Driving in Urban or City Setting</span></b></label>
+                                        <label for="urban-city"><b><span class="important">Driving in Rural or Urban Setting</span></b></label>
                                         <select id="urban-city" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">Urban</option>
-                                            <option value="1">City</option>
+                                            <option value="0">Rural</option>
+                                            <option value="1" selected>Urban</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="urban-city" aria-describedby="basic-addon2">
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
 
-
-                        <div class="col-xl-3 col-lg-7">
+                        <div class="col-xl-3 col-lg-6">
 
                             <!-- Environment 2 ADDITIONAL FEATURES -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">ADDITIONAL FACTORS</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Additional factors</h6>
                                 </div>
                                 <div class="card-body">
 
@@ -470,7 +475,7 @@
                                         <label for="light-conditions"><b>Light Conditions</b></label>
                                         <select id="light-conditions" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="daylight">Daylight</option>
-                                            <option value="dark">Dark</option>
+                                            <option value="dark" selected>Dark</option>
                                             <option value="dawn">Dawn</option>
                                             <option value="dusk">Dusk</option>
                                             <option value="other">Other</option>
@@ -486,13 +491,12 @@
                                             <option value="clear">Clear</option>
                                             <option value="cloudy">Cloudy</option>
                                             <option value="rain_sleet">Rain / selected</option>
-                                            <option value="snow_blowsnow">Snow / blowing snow</option>
+                                            <option value="snow_blowsnow" selected>Snow / blowing snow</option>
                                             <option value="fog_smoke">Fog / smoke</option>
                                             <option value="blowing_dirt">Blowing dirt</option>
                                             <option value="windy">Windy</option>
                                             <option value="freezing_rain">Freezing rain</option>
                                             <option value="other">Other</option>
-                                            <option value="45">45 MPH</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="weather" aria-describedby="basic-addon2">
@@ -504,10 +508,10 @@
                                         <select id="bdytyp" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="two_door">2-door sedan</option>
                                             <option value="four_door">4-door sedan</option>
-                                            <option value="convertable">Convertable</option>
+                                            <option value="convertable">Convertible</option>
                                             <option value="small_suv_truck">Small SUV/truck</option>
                                             <option value="large_suv">Large SUV</option>
-                                            <option value="van">Van</option>
+                                            <option value="van" selected>Van</option>
                                             <option value="truck">Truck</option>
                                             <option value="motorcycle_trike">Motorcycle/trike</option>
                                             <option value="bus">Bus</option>
@@ -530,7 +534,7 @@
                                             <option value="Japan">Japan</option>
                                             <option value="Korea">Korea</option>
                                             <option value="Sweden">Sweden</option>
-                                            <option value="USA">USA</option>
+                                            <option value="USA" selected>USA</option>
                                             <option value="Other">Other-car</option>
                                             <option value="Motorcycle">Other-motorcycle</option>
                                             <option value="Truck">Other-truck</option>
@@ -543,7 +547,7 @@
                                         <drop
                                         <label for="towing"><b>Towing a trailer?</b></label>
                                         <select id="towing" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -557,7 +561,7 @@
                                             <option value="one_way">One-way</option>
                                             <option value="two_way">Two-way no median</option>                                            
                                             <option value="two_way_div_bar">Two-way with barrier</option>                                            
-                                            <option value="two_way_div_nobar">Two-way no barrier</option>                                            
+                                            <option value="two_way_div_nobar" selected>Two-way no barrier</option>                                            
                                             <option value="on_ramp">On-ramp/exit</option>
                                             <option value="park_drive">Parking lot/driveway</option>
                                         </select
@@ -569,22 +573,24 @@
                                         <drop
                                         <label for="workzone"><b>In a workzone?</b></label>
                                         <select id="workzone" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="workzone" aria-describedby="basic-addon2">
                                     </div>
+                                    
                                     <div class="input-group">
                                         <drop
                                         <label for="speedrel"><b>Crash is speed related?</b></label>
                                         <select id="speedrel" class="form-control bg-light border-0 small" onchange="predictInjury();">
                                             <option value="0">No</option>
-                                            <option value="1">Yes</option>
+                                            <option value="1" selected>Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="Lighting conditions" aria-describedby="basic-addon2">
                                     </div>
+                                    
                                     <div class="input-group">
                                         <drop
                                         <label for="p_crash"><b>Movement prior to crash</b></label>
@@ -596,9 +602,10 @@
                                             <option value="merging">Merging</option>
                                             <option value="turn_right">Turning right</option>
                                             <option value="turn_left">Turnign left</option>
-                                            <option value="curve">On a curve</option>
+                                            <option value="curve" selected>On a curve</option>
                                             <option value="change_lane">Changing lanes</option>
                                             <option value="passing">Passing</option>
+                                            <option value="u-turn">U-Turn</option>
                                             <option value="avoid_veh">Avoidance maneuver</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -614,7 +621,7 @@
                                             <option value="fire">Fire</option>
                                             <option value="fallout_inj">Falling out / medical cause</option>
                                             <option value="lost_control">Loss of control</option>
-                                            <option value="moving_veh">Moving vehicle</option>
+                                            <option value="moving_veh" selected>Moving vehicle</option>
                                             <option value="parked_veh">Parked vehicle</option>
                                             <option value="fixed_obj">Fixed manmade object</option>
                                             <option value="nat_obj">Fixed natural object</option>
@@ -627,27 +634,16 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="most_harm" aria-describedby="basic-addon2">
                                     </div>
-
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-
-                                    
-
                                 </div>
                             </div>
-
                         </div>
 
-                        <div class="col-xl-3 col-lg-7">
+                        <div class="col-xl-3 col-lg-6">
 
                             <!-- Environment 3 ADDITIONAL FEATURES -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">ADDITIONAL FACTORS</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Additional factors</h6>
                                 </div>
                                 <div class="card-body">
                                     <div class="input-group">
@@ -665,11 +661,12 @@
                                             <option value="Sep">September</option>
                                             <option value="Oct">October</option>
                                             <option value="Nov">November</option>
-                                            <option value="Dec">December</option>
+                                            <option value="Dec" selected>December</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="month" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="day_week"><b>Day of the week</b></label>
@@ -677,7 +674,7 @@
                                             <option value="Sun">Sunday</option>
                                             <option value="Mon">Monday</option>
                                             <option value="Tues">Tuesday</option>
-                                            <option value="Wed">Wednesday</option>
+                                            <option value="Wed" selected>Wednesday</option>
                                             <option value="Thurs">Thursday</option>
                                             <option value="Fri">Friday</option>
                                             <option value="Sat">Saturday</option>
@@ -685,11 +682,12 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="day_week" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="seat_name"><b>Seating position</b></label>
                                         <select id="seat_name" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="driver">Driver</option>
+                                            <option value="driver" selected>Driver</option>
                                             <option value="front_pass">Front passenger</option>
                                             <option value="second">Second row</option>
                                             <option value="third_fourth">Third or fourth row</option>
@@ -700,11 +698,12 @@
                                         <input type="text" class="form-control bg-light"
                                 aria-label="seat_name" aria-describedby="basic-addon2">
                                     </div>
+
                                     <div class="input-group">
                                         <drop
                                         <label for="restraint_misuse"><b>Misusing restraint?</b></label>
                                         <select id="restraint_misuse" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -715,7 +714,7 @@
                                         <drop
                                         <label for="helmet_use"><b>Helmet worn?</b></label>
                                         <select id="helmet_use" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>                                            
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -726,7 +725,7 @@
                                         <drop
                                         <label for="helmet_misuse"><b>Misusing helmet?</b></label>
                                         <select id="helmet_misuse" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -737,7 +736,7 @@
                                         <drop
                                         <label for="driv_alcohol"><b>Driver alcohol involvement</b></label>
                                         <select id="driv_alcohol" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -748,7 +747,7 @@
                                         <drop
                                         <label for="drinking_name"><b>Police noted drinking in car?</b></label>
                                         <select id="drinking_name" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option>
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -759,7 +758,7 @@
                                         <drop
                                         <label for="alc_08"><b>Your alcohol >0.08%?</b></label>
                                         <select id="alc_08" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
@@ -770,32 +769,32 @@
                                         <drop
                                         <label for="drugs"><b>Drugs involved?</b></label>
                                         <select id="drugs" class="form-control bg-light border-0 small" onchange="predictInjury();">
-                                            <option value="0">No</option>
+                                            <option value="0" selected>No</option>
                                             <option value="1">Yes</option> 
                                           </select
                                         <input type="text" class="form-control bg-light"
                                 aria-label="drugs" aria-describedby="basic-addon2">
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
 
                         <!-- Predictions -->
-                        <div class="col-xl-2 col-lg-5">
+                        <div class="col-xl-2 col-lg-6">
                             <div class="row">
                                 <div class="col-xl-12 col-lg-12">
                                     <div class="card shadow mb-4">
                                         <!-- Card Header - Dropdown -->
                                         <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of any injury</h6>
+                                            <h6 class="m-0 font-weight-bold text-primary">Any injury prediction</h6>
                                         </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
-                                            <div>
-                                                <canvas id="any-injury-prediction" width="140" height="140">
-                                                </canvas>
+                                            <div class="text-center">
+                                                <i id="any-injury-prediction-image" class="fas fa-spinner fa-6x text-primary text-center"></i>
+                                                <div id="any-injury-prediction-text">
+                                                    Running prediction...
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -805,13 +804,15 @@
                                     <div class="card shadow mb-4">
                                         <!-- Card Header - Dropdown -->
                                         <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of serious injury</h6>
+                                            <h6 class="m-0 font-weight-bold text-primary">Serious injury prediction</h6>
                                         </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
-                                            <div>
-                                                <canvas id="serious-injury-prediction" width="140" height="140">
-                                                </canvas>
+                                            <div class="text-center">
+                                                <i id="serious-injury-prediction-image" class="fas fa-spinner fa-6x text-primary text-center"></i>
+                                                <div id="serious-injury-prediction-text">
+                                                    Running prediction...
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -821,13 +822,15 @@
                                     <div class="card shadow mb-4">
                                         <!-- Card Header - Dropdown -->
                                         <div class="card-header py-3">
-                                            <h6 class="m-0 font-weight-bold text-primary">Likelihood of fatal injury</h6>
+                                            <h6 class="m-0 font-weight-bold text-primary">Fataly injury prediction</h6>
                                         </div>
                                         <!-- Card Body -->
                                         <div class="card-body">
-                                            <div>
-                                                <canvas id="fatal-injury-prediction" width="140" height="140">
-                                                </canvas>
+                                            <div class="text-center">
+                                                <i id="fatal-injury-prediction-image" class="fas fa-spinner fa-6x text-primary text-center"></i>
+                                                <div id="fatal-injury-prediction-text">
+                                                    Running prediction...
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -892,13 +895,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
 
     <!-- D3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>

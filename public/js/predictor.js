@@ -68,6 +68,8 @@ var fatalInjuryModel = loadFatalInjuryModel().then((model) => {
 function predictInjury() {
   console.log("predicting injury...");
 
+  resetPredictions();
+
   // Get the models to use with predictions.
   var anyInput = getModelInputBasedOnProvidedFields('anyInjury');
   console.log("any model input:", anyInput);
@@ -85,13 +87,39 @@ function predictInjury() {
   predictFatalInjury(fatalInput);
 }
 
+function resetPredictions() {
+  var anyInjuryPredictionImage = document.getElementById("any-injury-prediction-image");
+  var anyInjuryPredictionText = document.getElementById("any-injury-prediction-text");
+  var seriousInjuryPredictionImage = document.getElementById("serious-injury-prediction-image");
+  var seriousInjuryPredictionText = document.getElementById("serious-injury-prediction-text");
+  var fatalInjuryPredictionImage = document.getElementById("fatal-injury-prediction-image");
+  var fatalInjuryPredictionText = document.getElementById("fatal-injury-prediction-text");
+  let spinnerClassName = 'fas fa-spinner fa-6x text-primary text-center';
+  let runningPrediction = 'Running prediction';
+  anyInjuryPredictionImage.className = spinnerClassName;
+  seriousInjuryPredictionImage.className = spinnerClassName;
+  fatalInjuryPredictionImage.className = spinnerClassName;
+  anyInjuryPredictionText.innerHTML = runningPrediction;
+  seriousInjuryPredictionText.innerHTML = runningPrediction;
+  fatalInjuryPredictionText.innerHTML = runningPrediction;
+}
+
 function predictAnyInjury(modelInput) {
   console.log("predicting any injury...");
   var anyInjuryResult = anyInjuryModel.predict(modelInput);
   console.log("any injury prediction:", anyInjuryResult);
   var data = anyInjuryResult.dataSync();
   console.log("any injury prediction data:", data);
-  drawLikelihoodChart('any-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of any injury');
+  var anyInjuryPredictionImage = document.getElementById("any-injury-prediction-image");
+  var anyInjuryPredictionText = document.getElementById("any-injury-prediction-text");
+  if (data[0] >= .5) {
+    anyInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    anyInjuryPredictionText.innerHTML = "Likely injury.";
+  }
+  else {
+    anyInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    anyInjuryPredictionText.innerHTML = "Unlikely injury.";
+  }
 }
 
 function predictSeriousInjury(modelInput) {
@@ -100,7 +128,16 @@ function predictSeriousInjury(modelInput) {
   console.log("serious injury prediction:", seriousInjuryResult);
   var data = seriousInjuryResult.dataSync();
   console.log("serious injury prediction data:", data);
-  drawLikelihoodChart('serious-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of serious injury');
+  var seriousInjuryPredictionImage = document.getElementById("serious-injury-prediction-image");
+  var seriousInjuryPredictionText = document.getElementById("serious-injury-prediction-text");
+  if (data[0] >= .5) {
+    seriousInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    seriousInjuryPredictionText.innerHTML = "Likely serious injury.";
+  }
+  else {
+    seriousInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    seriousInjuryPredictionText.innerHTML = "Unlikely serious injury.";
+  }
 }
 
 function predictFatalInjury(modelInput) {
@@ -109,7 +146,16 @@ function predictFatalInjury(modelInput) {
   console.log("fatal injury prediction:", fatalInjuryResult);
   var data = fatalInjuryResult.dataSync();
   console.log("fatal injury prediction data:", data);
-  drawLikelihoodChart('fatal-injury-prediction', (data[0] * 100).toFixed(1), 'Likelihood of fatal injury');
+  var fatalInjuryPredictionImage = document.getElementById("fatal-injury-prediction-image");
+  var fatalInjuryPredictionText = document.getElementById("fatal-injury-prediction-text");
+  if (data[0] >= .5) {
+    fatalInjuryPredictionImage.className  = 'fas fa-check fa-6x text-danger';
+    fatalInjuryPredictionText.innerHTML = "Likely fatal injury.";
+  }
+  else {
+    fatalInjuryPredictionImage.className  = 'fas fa-times fa-6x text-success';
+    fatalInjuryPredictionText.innerHTML = "Unlikely fatal injury.";
+  }
 }
 
 function getModelInputBasedOnProvidedFields(modelType) {
@@ -179,113 +225,113 @@ function getModelInputBasedOnProvidedFields(modelType) {
   console.log("drugs involved:", drugsInvolved.value);
  
   // Pass provided values to get model input.
-  var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value,vehicleCountry.value,drivingLocation.value,seatPosition.value);
+  var modelInput = getModelInput(modelType, driverAge.value,vehicleYear.value,tripHour.value,speedLimit.value,vehicleSpeed.value,vehicleOccupants.value,vehicleDamage.value,restraintUsed.value,driverSex.value,urbanCity.value,lightConditions.value,vehicleCountry.value,drivingLocation.value,seatPosition.value,weatherConditions.value,bodyType.value,towingTrailer.value,workZone.value,speedRelated.value,priorCrash.value,mostHarmful.value,accidentDay.value,accidentMonth.value,restraintMisuse.value,helmetUse.value,helmetMisuse.value,driverAlcohol.value,drinkingNamed.value,alcohol08.value,drugsInvolved.value);
   return modelInput;
 }
 
-function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,vehicleCountry,drivingLocation,seatPosition) {
+function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehicleSpeed,vehicleOccupants,vehicleDamage,restraintUsed,driverSex,urbanCity,lightConditions,vehicleCountry,drivingLocation,seatPosition,weatherConditions,bodyType,towingTrailer,workZone,speedRelated,priorCrash,mostHarmful,accidentDay,accidentMonth,restraintMisuse,helmetUse,helmetMisuse,driverAlcohol,drinkingNamed,alcohol08,drugsInvolved) {
   var scaledInput;
   let input = [
     parseInt(urbanCity), //urbancity
     parseInt(tripHour), //hour
-    1, //alcohol
-    0, //wrk_zone
+    parseInt(driverAlcohol), //alcohol
+    parseInt(workZone), //wrk_zone
     parseInt(vehicleOccupants), //numoccs
-    0, //tow_vehname
+    parseInt(towingTrailer), //tow_vehname
     parseInt(vehicleSpeed), //trav_speed
-    0, //speedrelname
+    parseInt(speedRelated), //speedrelname
     parseInt(speedLimit), //vspd_lim
     parseInt(vehicleYear), //mod_year
-    0, //rest_misname
-    0, //helm_usename
-    0, //helm_misname
-    0, //drinkingname
-    0, //drugsname
+    parseInt(restraintMisuse), //rest_misname
+    parseInt(helmetUse), //helm_usename
+    parseInt(helmetMisuse), //helm_misname
+    parseInt(drinkingNamed), //drinkingname
+    parseInt(drugsInvolved), //drugsname
     parseInt(driverSex), //sex_imname
     parseInt(driverAge), //age_im
-    0, //alc_resname_08
-    1, //month_Apr
-    0, //month_Aug
-    0, //month_Dec
-    0, //month_Feb
-    0, //month_Jan
-    0, //month_Jul
-    0, //month_Jun
-    0, //month_Mar
-    0, //month_May
-    0, //month_Nov
-    0, //month_Oct
-    0, //month_Sep
-    1, //day_week_Fri
-    0, //day_week_Mon
-    0, //day_week_Sat
-    0, //day_week_Sun
-    0, //day_week_Thus
-    0, //day_week_Tues
-    0, //day_week_Wed
+    parseInt(alcohol08), //alc_resname_08
+    (accidentMonth == 'Apr') ? 1 : 0, //month_Apr
+    (accidentMonth == 'Aug') ? 1 : 0, //month_Aug
+    (accidentMonth == 'Dec') ? 1 : 0, //month_Dec
+    (accidentMonth == 'Feb') ? 1 : 0, //month_Feb
+    (accidentMonth == 'Jan') ? 1 : 0, //month_Jan
+    (accidentMonth == 'Jul') ? 1 : 0, //month_Jul
+    (accidentMonth == 'Jun') ? 1 : 0, //month_Jun
+    (accidentMonth == 'Mar') ? 1 : 0, //month_Mar
+    (accidentMonth == 'May') ? 1 : 0, //month_May
+    (accidentMonth == 'Nov') ? 1 : 0, //month_Nov
+    (accidentMonth == 'Oct') ? 1 : 0, //month_Oct
+    (accidentMonth == 'Sep') ? 1 : 0, //month_Sep
+    (accidentDay == 'Fri') ? 1 : 0, //day_week_Fri
+    (accidentDay == 'Mon') ? 1 : 0, //day_week_Mon
+    (accidentDay == 'Sat') ? 1 : 0,//day_week_Sat
+    (accidentDay == 'Sun') ? 1 : 0,//day_week_Sun
+    (accidentDay == 'Thurs') ? 1 : 0,//day_week_Thus
+    (accidentDay == 'Tues') ? 1 : 0,//day_week_Tues
+    (accidentDay == 'Wed') ? 1 : 0,//day_week_Wed
     (lightConditions == 'dark') ? 1 : 0, //lgt_cond_dark
     (lightConditions == 'dawn') ? 1 : 0, //lgt_cond_dawn
     (lightConditions == 'daylight') ? 1 : 0, //lgt_cond_daylight
     (lightConditions == 'dusk') ? 1 : 0, //lgt_cond_dusk
     (lightConditions == 'other') ? 1 : 0, //lgt_cond_other
-    0, //weather_blowing_dirt
-    1, //weather_clear
-    0, //weather_cloudy
-    0, //weather_fog_smoke
-    0, //weather_freezing_rain
-    0, //weather_other
-    0, //weather_rain_sleet
-    0, //weather_snow_blowsnow
-    0, //weather_windy
-    0, //m_harmname_harm_barrier
-    0, //m_harmname_harm_fire
-    0, //m_harmname_harm_fixed_manmade
-    0, //m_harmname_harm_injury_fallout
-    1, //m_harmname_harm_lost_control
-    0, //m_harmname_harm_moving_veh
-    0, //m_harmname_harm_nat_object
-    0, //m_harmname_harm_object
-    0, //m_harmname_harm_parked_veh
-    0, //m_harmname_harm_ped_animal
-    0, //m_harmname_harm_terrain
-    0, //m_harmname_harm_train
-    0, //m_harmname_harm_unknown
-    0, //m_harmname_harm_water
+    (weatherConditions == 'blowing_dirt') ? 1 : 0, //weather_blowing_dirt
+    (weatherConditions == 'clear') ? 1 : 0,//weather_clear
+    (weatherConditions == 'cloudy') ? 1 : 0,//weather_cloudy
+    (weatherConditions == 'fog_smoke') ? 1 : 0,//weather_fog_smoke
+    (weatherConditions == 'freezing_rain') ? 1 : 0,//weather_freezing_rain
+    (weatherConditions == 'other') ? 1 : 0,//weather_other
+    (weatherConditions == 'rain_sleet') ? 1 : 0,//weather_rain_sleet
+    (weatherConditions == 'snow_blowsnow') ? 1 : 0,//weather_snow_blowsnow
+    (weatherConditions == 'windy') ? 1 : 0,//weather_windy
+    (mostHarmful == 'barrier') ? 1 : 0, //m_harmname_harm_barrier
+    (mostHarmful == 'fire') ? 1 : 0, //m_harmname_harm_fire
+    (mostHarmful == 'fixed_obj') ? 1 : 0, //m_harmname_harm_fixed_manmade
+    (mostHarmful == 'fallout_inj') ? 1 : 0, //m_harmname_harm_injury_fallout
+    (mostHarmful == 'lost_control') ? 1 : 0, //m_harmname_harm_lost_control
+    (mostHarmful == 'moving_veh') ? 1 : 0, //m_harmname_harm_moving_veh
+    (mostHarmful == 'nat_obj') ? 1 : 0, //m_harmname_harm_nat_object
+    (mostHarmful == 'object') ? 1 : 0, //m_harmname_harm_object
+    (mostHarmful == 'parked_veh') ? 1 : 0, //m_harmname_harm_parked_veh
+    (mostHarmful == 'animal_ped') ? 1 : 0, //m_harmname_harm_ped_animal
+    (mostHarmful == 'terrain') ? 1 : 0, //m_harmname_harm_terrain
+    (mostHarmful == 'train') ? 1 : 0, //m_harmname_harm_train
+    (mostHarmful == 'unknown') ? 1 : 0, //m_harmname_harm_unknown
+    (mostHarmful == 'water') ? 1 : 0, //m_harmname_harm_water
     (vehicleDamage == '3') ? 1 : 0, //deformedname_Disabling Damage
     (vehicleDamage == '2') ? 1 : 0, //deformedname_Functional Damage
     (vehicleDamage == '1') ? 1 : 0, //deformedname_Minor Damage
     (vehicleDamage == '0') ? 1 : 0, //deformedname_No Damage
-    (drivingLocation== 'on_ramp') ? 1 : 0, //vtrafwayname_Exit_on_ramp
-    (drivingLocation== 'one_way') ? 1 : 0, //vtrafwayname_One-way
-    (drivingLocation== 'park_drive') ? 1 : 0, //vtrafwayname_Parking_lot_driveway
-    (drivingLocation== 'two-way') ? 1 : 0, //vtrafwayname_Two-way
-    (drivingLocation== 'two_way') ? 1 : 0, //vtrafwayname_Two_way
-    (drivingLocation== 'two_way_div_bar') ? 1 : 0, //vtrafwayname_Two_way_div_med_bar
-    (drivingLocation== 'two_way_div_nobar') ? 1 : 0, //vtrafwayname_Two_way_div_med_nobar	
-    0, //bdytyp_imname_2_door_sedan
-    1, //bdytyp_imname_4_door_sedan
-    0, //bdytyp_imname_ATV_rec_vehicle	
-    0, //bdytyp_imname_Bus
-    0, //bdytyp_imname_Construction_farm_equip
-    0, //bdytyp_imname_Convertable
-    0, //bdytyp_imname_Large_SUV
-    0, //bdytyp_imname_Motorcylcle_trike
-    0, //bdytyp_imname_Motorhome_RV
-    0, //bdytyp_imname_Small_SUV_light_truck
-    0, //bdytyp_imname_Truck
-    0, //bdytyp_imname_Van
-    0, //p_crash1name_Changing Lanes
-    0, //p_crash1name_Diasbled_parked
-    1, //p_crash1name_Going straight
-    0, //p_crash1name_Making a U-turn	
-    0, //p_crash1name_Merging
-    0, //p_crash1name_Negotiating a Curve
-    0, //p_crash1name_Passing or Overtaking Another Vehicle
-    0, //p_crash1name_Start on road
-    0, //p_crash1name_Stopping_backup
-    0, //p_crash1name_Successful Avoidance Maneuver to a Previous Critical Event
-    0, //p_crash1name_Turning Left
-    0, //p_crash1name_Turning Right
+    (drivingLocation == 'on_ramp') ? 1 : 0, //vtrafwayname_Exit_on_ramp
+    (drivingLocation == 'one_way') ? 1 : 0, //vtrafwayname_One-way
+    (drivingLocation == 'park_drive') ? 1 : 0, //vtrafwayname_Parking_lot_driveway
+    (drivingLocation == 'two_way') ? 1 : 0, //vtrafwayname_Two-way
+    (drivingLocation == 'two_way') ? 1 : 0, //vtrafwayname_Two_way
+    (drivingLocation == 'two_way_div_bar') ? 1 : 0, //vtrafwayname_Two_way_div_med_bar
+    (drivingLocation == 'two_way_div_nobar') ? 1 : 0, //vtrafwayname_Two_way_div_med_nobar	
+    (bodyType == 'two_door') ? 1 : 0, //bdytyp_imname_2_door_sedan
+    (bodyType == 'four_sedan') ? 1 : 0, //bdytyp_imname_4_door_sedan
+    (bodyType == 'atv_rec') ? 1 : 0, //bdytyp_imname_ATV_rec_vehicle	
+    (bodyType == 'bus') ? 1 : 0,//bdytyp_imname_Bus
+    (bodyType == 'work_equp') ? 1 : 0,//bdytyp_imname_Construction_farm_equip
+    (bodyType == 'convertable') ? 1 : 0,//bdytyp_imname_Convertable
+    (bodyType == 'large_suv') ? 1 : 0,//bdytyp_imname_Large_SUV
+    (bodyType == 'motorcycle_trike') ? 1 : 0,//bdytyp_imname_Motorcylcle_trike
+    (bodyType == 'motorhome') ? 1 : 0,//bdytyp_imname_Motorhome_RV
+    (bodyType == 'small_suv_truck') ? 1 : 0,//bdytyp_imname_Small_SUV_light_truck
+    (bodyType == 'truck') ? 1 : 0,//bdytyp_imname_Truck
+    (bodyType == 'van') ? 1 : 0,//bdytyp_imname_Van
+    (priorCrash == 'change_lane') ? 1 : 0 , //p_crash1name_Changing Lanes
+    (priorCrash == 'disable_park') ? 1 : 0 , //p_crash1name_Diasbled_parked
+    (priorCrash == 'straight') ? 1 : 0 , //p_crash1name_Going straight
+    (priorCrash == 'u-turn') ? 1 : 0 , //p_crash1name_Making a U-turn	
+    (priorCrash == 'merging') ? 1 : 0 , //p_crash1name_Merging
+    (priorCrash == 'curve') ? 1 : 0 , //p_crash1name_Negotiating a Curve
+    (priorCrash == 'passing') ? 1 : 0 , //p_crash1name_Passing or Overtaking Another Vehicle
+    (priorCrash == 'start') ? 1 : 0 , //p_crash1name_Start on road
+    (priorCrash == 'stop_back') ? 1 : 0 , //p_crash1name_Stopping_backup
+    (priorCrash == 'avoid_veh') ? 1 : 0 , //p_crash1name_Successful Avoidance Maneuver to a Previous Critical Event
+    (priorCrash == 'turn_left') ? 1 : 0 , //p_crash1name_Turning Left
+    (priorCrash == 'right_left') ? 1 : 0 , //p_crash1name_Turning Right
     (restraintUsed == 'Child_restraint') ? 1 : 0 , //rest_usename_Child_restraint
     (restraintUsed == 'Harness') ? 1 : 0 , //rest_usename_Harness
     (restraintUsed == 'No_seatbelt') ? 1 : 0 , //rest_usename_No_seatbelt
@@ -340,55 +386,6 @@ function getModelInput(modelType, driverAge,vehicleYear,tripHour,speedLimit,vehi
   console.log('vector input:', vectorInput);
 
   return tf.tensor(vectorInput);
-}
-
-function drawLikelihoodChart(id, percent, label) {
-  new Chart(id, {
-    type: 'doughnut',
-    data: {
-      datasets: [{
-        label: label,
-        percent: percent,
-        backgroundColor: ['#5283ff']
-      }]
-    },
-    plugins: [{
-        beforeInit: (chart) => {
-          const dataset = chart.data.datasets[0];
-          chart.data.labels = [dataset.label];
-          dataset.data = [dataset.percent, 100 - dataset.percent];
-        }
-      },
-      {
-        beforeDraw: (chart) => {
-          var width = chart.chart.width,
-            height = chart.chart.height,
-            ctx = chart.chart.ctx;
-          ctx.restore();
-          var fontSize = (height / 100).toFixed(2);
-          ctx.font = fontSize + "em sans-serif";
-          ctx.fillStyle = "#9b9b9b";
-          ctx.textBaseline = "middle";
-          var text = chart.data.datasets[0].percent + "%",
-            textX = Math.round((width - ctx.measureText(text).width) / 2),
-            textY = height / 2;
-          ctx.fillText(text, textX, textY);
-          ctx.save();
-        }
-      }
-    ],
-    options: {
-      maintainAspectRatio: false,
-      cutoutPercentage: 75,
-      rotation: Math.PI / 2,
-      legend: {
-        display: false,
-      },
-      tooltips: {
-        filter: tooltipItem => tooltipItem.index == 0
-      }
-    }
-  });
 }
 
 async function loadAnyInjuryModel() {

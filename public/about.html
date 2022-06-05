@@ -73,7 +73,6 @@
         </ul>
         <!-- End of Sidebar -->
 
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
@@ -99,47 +98,87 @@
                             class="fas fa-car-crash fa-sm text-white-50"></i> Go to Crashboard</a>
 
                     </ul>
+
                 </nav>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
-                    <!-- Page Heading -->
-                    <p class="mb-4">Leveraging vehicle crash data from the United States, this web application will provide the likelihood of injury should someone get in an auto accident.</p>
-
-                    <!-- Content Row -->
+                    <!-- Background Row -->
                     <div class="row">
-
-                        <div class="col-xl-10 col-lg-7">
-
-                            <!-- NHTSA -->
+                        <div class="col-xl-12 col-lg-12">
+                            <!-- Background -->
                             <div class="card shadow mb-8">
                                 <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">National High Traffic Safety Administration (NHTSA)</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Background</h6>
                                 </div>
                                 <div class="card-body">
-                                    
+                                    The <a href="https://www.nhtsa.gov/">National Highway Traffic Safety Administration (NHTSA)</a> is a federal agency that aims to minimize vehicular incidents and potential harm from the incidents. 
+                                    The NHTSA publishes multi-year datasets with a multitude of information ranging from age of the driver to weather conditions during an incident.   
                                 </div>
                             </div>
-
                         </div>
+                    </div>
+                    <br>
+                    <!-- Data Row -->
+                    <div class="row">
+                        <!-- Data  -->
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card shadow mb-8">
+                                <div class="card-header py-3">
+                                    <h6 class="m-0 font-weight-bold text-primary">Data</h6>
+                                </div>
+                                <div class="card-body">
+                                    <p>Data was downloaded from the <a href="https://www.nhtsa.gov/crash-data-systems/crash-report-sampling-system">Crash Reporting Sampling System</a> website. The data was a random sampling 
+                                    from millions of reported crashes each year, each dataset had over 100,000 accidents. All Gas No Brakes focused on three datasets pertaining to accidents, vehicles, and people. </p>
+                                    
+                                    <p>The three datasets were loaded into a PostgreSQL database hosted in AWS RDS (Amazon Web Services Relational Database Service). The database is accessible to both the web application and Python for creating machine learning models. </p>
 
-                        <!-- Predictions -->
-                        <div class="col-xl-2 col-lg-5">
+                                    <p>Before the data could be put through a machine learning model, it was preprocessed to remove fields that did not contribute to an accident. 
+                                    For example, one field that was removed before running the model pertained to the need of transportation to a hospital for a person who had 
+                                    been in an accident. This field was more of a result of an accident instead of a determinant. A total of 30 factors were used to create the 
+                                    machine learning model that gave three outcomes (any injury, a serious injury, or a fatal injury).</p>
 
-                            <!-- Crash  -->
+                                    <p>Once the machine learning model was finished, a Node.js web application was built and is currently running on this Heroku platform.</p>
+                                    <p>Welcome!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <!-- About All Gas No Brakes -->
+                    <div class="row">
+                        <!-- All Gas No Brakes  -->
+                        <div class="col-xl-12 col-lg-12">
                             <div class="card shadow mb-8">
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">About All Gas No Brakes</h6>
                                 </div>
                                 <div class="card-body">
-                                    
+                                    All Gas No Brakes is a composed of five students from the University of Minnesota Data Analytics and Visualizations bootcamp. 
+                                    We created this website in an effort to let users interact with our interface and leverage the machine learning model we created to predict severity of an injury in the result of a crash.  
                                 </div>
                             </div>
                         </div>
                     </div>
-
+                    <br>
+                    <!-- Links Row -->
+                    <div class="row">
+                        <!-- Links -->
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card shadow mb-8">     
+                                <div class="card-header py-3">
+                                    <h6 div class="m-0 font-weight-bold text-primary">Links</h6>
+                                </div>
+                                <div class="card-body">
+                                        <p>Check out our <a href="https://github.com/Paul-Lecander/final-project">Machine Learning GitHub</a>!</a></p>
+                                        <p>Check out our <a href="https://github.com/haldud/all-gas-no-brakes">Website GitHub</a>!</a></p>                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </div>
                 <!-- /.container-fluid -->
 
@@ -197,6 +236,18 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
 
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+    <!-- D3 -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- CSSR -->
+    <script src="js/cssr.js"></script>
 </body>
 
 </html>
